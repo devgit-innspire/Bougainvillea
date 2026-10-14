@@ -28,9 +28,13 @@ npm run preview   # serve dist/ at the production base path
 
 ### Canonical URL
 
-`VITE_SITE_URL` in `.env.production` sets the canonical URL, Open Graph URLs, sitemap and JSON-LD, and the build's base path is derived from it. It currently points at GitHub Pages (`https://devgit-innspire.github.io/Bougainvillea`). When a custom domain is connected, change that one value and rebuild.
+`VITE_SITE_URL` in `.env.production` sets the canonical URL, Open Graph URLs, sitemap and JSON-LD, and the build's base path is derived from it. It currently points at the Vercel deployment (`https://bougainvillea-three.vercel.app`, served from the domain root). For a sub-path host such as GitHub Pages, use the full sub-path URL (e.g. `https://devgit-innspire.github.io/Bougainvillea`). When a custom domain is connected, change that one value and rebuild.
 
-### Deploying to GitHub Pages
+### Deploying
+
+Vercel builds from `main` automatically (framework preset: Vite, build command `npm run build`, output `dist`).
+
+#### GitHub Pages (alternative)
 
 A ready workflow lives at `deploy/github-pages-workflow.yml`. Move it to `.github/workflows/deploy.yml` (pushing workflow files needs a token with the `workflow` scope), set **Settings → Pages → Source** to *GitHub Actions*, then run it from the Actions tab.
 
@@ -38,7 +42,6 @@ A ready workflow lives at `deploy/github-pages-workflow.yml`. Move it to `.githu
 
 - Submit `sitemap.xml` in Google Search Console (it includes image and video entries).
 - Add the live URL as the **website** on the Google Business Profile, the Booking.com property page and the grexa site — those are the backlinks that matter most for local search.
-- `robots.txt` is only honoured at a domain root; on a GitHub Pages sub-path, rely on Search Console instead.
 
 ## Booking behaviour
 
