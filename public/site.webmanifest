@@ -1,0 +1,11 @@
+{
+  "name": "The Bougainvillea Retreat",
+  "short_name": "Bougainvillea",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#214E3F",
+  "background_color": "#F7F1E7",
+  "display": "browser"
+}
