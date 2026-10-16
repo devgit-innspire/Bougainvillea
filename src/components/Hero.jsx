@@ -20,7 +20,7 @@ export default function Hero() {
         </picture>
         <div className="hero__shade" aria-hidden="true" />
         <div className="wrap hero__content">
-          <Eyebrow light>Private pool villa · Dehradun</Eyebrow>
+          <Eyebrow light>Villa, cottages &amp; pool villa · Dehradun</Eyebrow>
           <h1 id="hero-title">
             A quiet hillside escape,<br />
             <em>in full bloom.</em>

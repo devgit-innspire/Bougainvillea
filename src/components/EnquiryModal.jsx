@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { LINKS, waLink } from '../data/site.js';
+import { useEffect, useState } from 'react';
+import { LINKS, ROOMS, waLink } from '../data/site.js';
 import { Eyebrow, Icon, BloomSpray } from './Botanical.jsx';
 import { useModal } from '../lib/ui.js';
 
@@ -10,9 +10,17 @@ const isoToday = () => {
 const pretty = (v) =>
   new Date(`${v}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
-export default function EnquiryModal({ open, onClose, returnFocus }) {
+const ANY_STAY = 'No preference';
+
+export default function EnquiryModal({ open, onClose, returnFocus, room }) {
   const dialog = useModal(open, onClose, returnFocus);
   const [error, setError] = useState('');
+  const [stay, setStay] = useState(ANY_STAY);
+
+  // Preselect the stay the visitor enquired from; otherwise keep their last choice.
+  useEffect(() => {
+    if (open && room) setStay(room);
+  }, [open, room]);
   const [checkin, setCheckin] = useState('');
   const [checkout, setCheckout] = useState('');
   const today = open ? isoToday() : undefined;
@@ -35,6 +43,7 @@ export default function EnquiryModal({ open, onClose, returnFocus }) {
       "Hi! I'd like to check availability at The Bougainvillea Retreat.",
       '',
       `Dates: ${pretty(checkin)} → ${pretty(checkout)}`,
+      `Stay: ${stay}`,
       `Guests: ${f.guests.value || '—'}`,
       `Occasion: ${f.occasion.value}`
     ];
@@ -74,6 +83,15 @@ export default function EnquiryModal({ open, onClose, returnFocus }) {
             <input type="date" name="checkout" min={checkin || today} value={checkout} onChange={(e) => setCheckout(e.target.value)} />
           </label>
         </div>
+        <label className="field">
+          <span>Stay</span>
+          <select name="stay" value={stay} onChange={(e) => setStay(e.target.value)}>
+            <option>{ANY_STAY}</option>
+            {ROOMS.map((r) => (
+              <option key={r.id} value={r.name}>{r.name} ({r.unitLabel})</option>
+            ))}
+          </select>
+        </label>
         <div className="field-row">
           <label className="field"><span>Guests</span><input type="number" name="guests" min="1" max="30" defaultValue="2" inputMode="numeric" /></label>
           <label className="field">

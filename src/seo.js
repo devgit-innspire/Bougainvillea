@@ -1,4 +1,4 @@
-import { PROPERTY, LINKS, REELS, GALLERY, SITE_URL } from './data/site.js';
+import { PROPERTY, LINKS, REELS, GALLERY, ROOMS, TOTAL_ROOMS, roomPhotoPath, SITE_URL } from './data/site.js';
 
 const abs = (path) => `${SITE_URL}/${path.replace(/^\//, '')}`;
 const PUBLISHED = '2026-10-14';
@@ -43,6 +43,17 @@ export function buildJsonLd() {
       (name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })
     ),
     petsAllowed: true,
+    numberOfRooms: TOTAL_ROOMS,
+    containsPlace: ROOMS.map((r) => ({
+      '@type': r.id === 'tara-villa' ? 'Suite' : 'HotelRoom',
+      '@id': `${SITE_URL}/#stay-${r.id}`,
+      name: `${r.name} — ${PROPERTY.name}`,
+      description: r.text,
+      url: `${SITE_URL}/#stay-${r.id}`,
+      image: r.photos.map((p) => abs(`assets/img/${roomPhotoPath(p)}.jpg`)),
+      numberOfRooms: r.units,
+      amenityFeature: r.features.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true }))
+    })),
     sameAs: [LINKS.googleMaps, LINKS.booking, LINKS.businessSite],
     potentialAction: {
       '@type': 'ReserveAction',
@@ -64,7 +75,7 @@ export function buildJsonLd() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: `${SITE_URL}/`,
-    name: `${PROPERTY.name} · Private Pool Villa in Dehradun`,
+    name: `${PROPERTY.name} · Villa, Cottages & Pool Villa Stays in Dehradun`,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': id },
     primaryImageOfPage: abs('assets/img/hero-dusk.jpg'),
@@ -85,7 +96,7 @@ export function buildJsonLd() {
 }
 
 export function buildSitemap() {
-  const images = ['hero-dusk', ...new Set(GALLERY.map((g) => g.img))]
+  const images = ['hero-dusk', ...new Set([...GALLERY.map((g) => g.img), ...ROOMS.flatMap((r) => r.photos.map(roomPhotoPath))])]
     .map((n) => `    <image:image><image:loc>${abs(`assets/img/${n}.jpg`)}</image:loc></image:image>`)
     .join('\n');
   const videos = REELS.map(

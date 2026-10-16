@@ -4,6 +4,7 @@ import { SvgDefs } from './components/Botanical.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import { Story, Highlights } from './components/Story.jsx';
+import Stays from './components/Stays.jsx';
 import Reels from './components/Reels.jsx';
 import ReelViewer from './components/ReelViewer.jsx';
 import Experiences from './components/Experiences.jsx';
@@ -14,17 +15,19 @@ import { FinalCta, Footer, FloatingCta } from './components/Closing.jsx';
 import EnquiryModal from './components/EnquiryModal.jsx';
 
 const REVEAL_SELECTOR =
-  '.section-head, .reviews__head, .story__text, .story__media, .hl, .reel-card, .exp, .rev, .loc__text, .loc__map';
+  '.section-head, .reviews__head, .story__text, .story__media, .hl, .stay, .reel-card, .exp, .rev, .loc__text, .loc__map';
 
 export default function App() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [enquiryRoom, setEnquiryRoom] = useState(null);
   const [reelIndex, setReelIndex] = useState(null);
   const [floatVisible, setFloatVisible] = useState(false);
   const enquiryTrigger = useRef(null);
   const reelTrigger = useRef(null);
 
-  const openEnquiry = useCallback((trigger) => {
+  const openEnquiry = useCallback((trigger, opts) => {
     enquiryTrigger.current = trigger || null;
+    setEnquiryRoom(opts?.room || null);
     setEnquiryOpen(true);
   }, []);
   const openReel = useCallback((i, trigger) => {
@@ -78,6 +81,7 @@ export default function App() {
         <Hero />
         <Story />
         <Highlights />
+        <Stays />
         <Reels />
         <Experiences />
         <Gallery />
@@ -88,7 +92,7 @@ export default function App() {
       <Footer />
       <FloatingCta visible={floatVisible} />
       <ReelViewer index={reelIndex} onIndex={setReelIndex} onClose={() => setReelIndex(null)} returnFocus={reelTrigger} />
-      <EnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} returnFocus={enquiryTrigger} />
+      <EnquiryModal open={enquiryOpen} room={enquiryRoom} onClose={() => setEnquiryOpen(false)} returnFocus={enquiryTrigger} />
     </UiContext.Provider>
   );
 }

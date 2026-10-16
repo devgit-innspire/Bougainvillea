@@ -8,7 +8,7 @@ export const PROPERTY = {
   shortName: 'Bougainvillea Retreat',
   tagline: 'Private pool villa in Dehradun',
   description:
-    'A quietly luxurious private pool villa in Bhagwant Pur, Dehradun — mountain views, candlelit evenings and rooftop dining at the Terrace of Doon. Rated 4.7/5 from 506+ Google reviews.',
+    'A quietly luxurious hillside retreat in Bhagwant Pur, Dehradun with 7 rooms — Tara Villa, Valley View rooms, a Private Pool Villa and Rustic Cottages. Mountain views, candlelit evenings and rooftop dining. Rated 4.7/5 from 506+ Google reviews.',
   phone: '+919258497632',
   phoneDisplay: '+91 92584 97632',
   whatsapp: '919258497632',
@@ -39,6 +39,7 @@ export const WA_DEFAULT = "Hi! I'd like to enquire about a stay at The Bougainvi
 
 export const NAV = [
   { href: '#story', label: 'The villa' },
+  { href: '#stays', label: 'Stays' },
   { href: '#reels', label: 'Reels' },
   { href: '#experiences', label: 'Experiences' },
   { href: '#gallery', label: 'Gallery' },
@@ -47,10 +48,10 @@ export const NAV = [
 ];
 
 export const TRUST = [
-  { k: 'Private pool', v: 'Yours alone during your stay' },
+  { k: 'Private pool', v: 'In the Private Pool Villa' },
   { k: 'Mountain views', v: 'Doon valley & city lights' },
   { k: '4.7 / 5', v: '506+ Google reviews', star: true },
-  { k: 'Pet friendly', v: 'Bring the whole family' }
+  { k: '7 rooms', v: 'Four ways to stay' }
 ];
 
 export const HIGHLIGHTS = [
@@ -60,6 +61,73 @@ export const HIGHLIGHTS = [
   { img: 'bedroom-view', title: 'Spacious, cosy interiors', text: 'Timber ceilings, soft light and corners made for slow mornings.', alt: 'Bright bedroom with a large window looking out to the hills' },
   { img: 'garden-bougainvillea', title: 'Gardens in bloom', text: 'Terraced lawns, swings and bougainvillea everywhere you look.', alt: 'Lawn and garden framed by flowering bougainvillea' }
 ];
+
+// Room inventory as confirmed by the client (7 rooms across 4 stay types).
+// Photos are the client's named Drive shots; descriptions only state what the photos show.
+export const ROOMS = [
+  {
+    id: 'tara-villa',
+    name: 'Tara Villa',
+    units: 1,
+    unitLabel: '1 BHK villa',
+    text: 'A self-contained one-bedroom villa with its own kitchen, a sunlit living area and a balcony that looks straight out over the valley.',
+    features: ['1 BHK', 'Kitchen', 'Living area', 'Valley-view balcony'],
+    photos: [
+      { img: 'tara-living', alt: 'Tara Villa living area with sofa opening onto a valley-view balcony' },
+      { img: 'tara-balcony', alt: 'Tara Villa balcony seating overlooking the hills at sunset' },
+      { img: 'tara-kitchen', alt: 'Tara Villa kitchen with hob, chimney, microwave and fridge' },
+      { img: 'tara-bath', alt: 'Tara Villa bathroom with blue tiles and vessel basin' },
+      { img: 'tara-garden', alt: 'Lawn seating with a swing beside Tara Villa' }
+    ]
+  },
+  {
+    id: 'valley-view',
+    name: 'Valley View Rooms',
+    units: 2,
+    unitLabel: '2 rooms',
+    text: 'Bright rooms framed by big windows and garden greenery, opening onto a lawn with open views across the Doon valley.',
+    features: ['Valley views', 'Garden & lawn', 'Lounge seating'],
+    photos: [
+      { img: 'valley-room', alt: 'Valley View room with red armchairs and floor-to-ceiling windows' },
+      { img: 'valley-sofa', alt: 'Valley View room lounge with sofa and garden window' },
+      { img: 'valley-outer', alt: 'Courtyard outside the Valley View rooms with bougainvillea and the A-frame villa above' },
+      { img: 'valley-lawn', alt: 'Lawn dining table outside the Valley View rooms at sunset' },
+      { img: 'valley-garden', alt: 'Garden outside the Valley View rooms at dusk with city lights below' }
+    ]
+  },
+  {
+    id: 'private-pool-villa',
+    name: 'Private Pool Villa',
+    units: 2,
+    unitLabel: '2 rooms',
+    text: 'Two rooms around a private indoor pool — slow afternoons in the water, with no sharing and no interruptions.',
+    features: ['Private pool', 'Indoor pool deck', 'Loungers'],
+    photos: [
+      { img: 'pool-villa-pool', alt: 'Private indoor pool with blue lighting and a stone feature wall' },
+      { img: 'pool-loungers', alt: 'Indoor pool lined with palms and loungers', shared: true },
+      { img: 'indoor-pool', alt: 'Private pool with wooden loungers', shared: true }
+    ]
+  },
+  {
+    id: 'rustic-cottage',
+    name: 'Rustic Cottages',
+    units: 2,
+    unitLabel: '2 rooms',
+    text: 'Timber A-frame cottages with vaulted wooden ceilings, cosy lounges and a porch terrace looking out to the hills.',
+    features: ['Timber A-frame', 'Vaulted ceilings', 'Porch terrace'],
+    photos: [
+      { img: 'rustic-bedroom', alt: 'Rustic Cottage bedroom under a vaulted timber ceiling' },
+      { img: 'rustic-exterior', alt: 'The twin timber A-frame Rustic Cottages at golden hour' },
+      { img: 'rustic-living', alt: 'Rustic Cottage lounge with sofas and a hill-view window' },
+      { img: 'rustic-bedroom2', alt: 'Rustic Cottage bedroom with patterned bench and wall sconces' },
+      { img: 'rustic-porch', alt: 'Rustic Cottage porch terrace with wooden armchairs and valley views' }
+    ]
+  }
+];
+export const TOTAL_ROOMS = ROOMS.reduce((n, r) => n + r.units, 0);
+
+// Rooms photos live in assets/img/rooms/, except shared shots reused from the main set.
+export const roomPhotoPath = (p) => (p.shared ? p.img : `rooms/${p.img}`);
 
 export const REELS = [
   {
@@ -103,7 +171,7 @@ export const GALLERY_FILTERS = [
 export const GALLERY = [
   { img: 'villa-steps', cat: 'villa', size: 'wide', alt: 'Stone steps leading up to the A-frame villa at golden hour' },
   { img: 'pool-loungers', cat: 'pool', alt: 'Indoor pool lined with palms and loungers' },
-  { img: 'aframe-bedroom', cat: 'rooms', size: 'tall', alt: 'Bedroom under a timber A-frame ceiling' },
+  { img: 'aframe-bedroom', cat: 'rooms', size: 'tall', alt: 'Rustic Cottage bedroom under a timber A-frame ceiling' },
   { img: 'terrace-view', cat: 'dining', alt: 'Open terrace with umbrella seating and a misty valley view' },
   { img: 'living-room', cat: 'rooms', alt: 'Living room with cushioned sofas and hill views' },
   { img: 'city-lights', cat: 'dining', size: 'wide', alt: 'Dehradun city lights glittering across the valley at night' },

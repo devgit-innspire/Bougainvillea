@@ -51,3 +51,8 @@ No rates or inventory are shown. "Check availability" opens an enquiry form that
 
 - Reels: client Google Drive — `the-villa` (four raw iOS clips), `poolside` (`IMG_6193/6194/6196`), `date-nights` (`TOD EDITED VIDEOS/B2.mp4`).
 - Photos and review quotes: the property's Google Business Profile (reviewer names shortened).
+- Room photos (`public/assets/img/rooms/`): client Drive folder `drive-download-20250706T134128Z-1-001`, matched by filename (Tara Villa, Valley View, Rustic Cottage, Swimming Pool).
+
+## Rooms
+
+7 rooms across 4 stay types, defined in `ROOMS` in `src/data/site.js`: Tara Villa (1 BHK), Valley View Rooms (2), Private Pool Villa (2), Rustic Cottages (2). The Stays section, the enquiry form's *Stay* menu, JSON-LD `numberOfRooms`/`containsPlace` and the sitemap's image entries all read from it.
