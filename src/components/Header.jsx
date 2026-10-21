@@ -1,6 +1,5 @@
-import { NAV, PROPERTY } from '../data/site.js';
+import { NAV, PROPERTY, LINKS } from '../data/site.js';
 import { BloomMark, Icon } from './Botanical.jsx';
-import { useUi } from '../lib/ui.js';
 
 export function Brand({ light = false }) {
   return (
@@ -16,7 +15,6 @@ export function Brand({ light = false }) {
 }
 
 export default function Header() {
-  const { openEnquiry } = useUi();
   return (
     <>
       <div className="topbar">
@@ -36,9 +34,14 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <button className="btn btn--primary btn--sm" onClick={(e) => openEnquiry(e.currentTarget)}>
-            Check availability
-          </button>
+          <a
+            className="btn btn--primary btn--sm"
+            href={LINKS.bookingEngine}
+            target="_blank"
+            rel="noopener"
+          >
+            Book now
+          </a>
         </div>
       </header>
     </>

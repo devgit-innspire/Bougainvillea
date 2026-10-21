@@ -1,10 +1,8 @@
-import { TRUST } from '../data/site.js';
+import { TRUST, LINKS } from '../data/site.js';
 import { img } from '../lib/asset.js';
 import { Eyebrow, Icon, Wave, Bloom } from './Botanical.jsx';
-import { useUi } from '../lib/ui.js';
 
 export default function Hero() {
-  const { openEnquiry } = useUi();
   return (
     <>
       <section className="hero" id="top" aria-labelledby="hero-title">
@@ -29,7 +27,7 @@ export default function Hero() {
             Poolside afternoons, mountain light and candlelit evenings — tucked away in Bhagwant Pur, above the Doon valley.
           </p>
           <div className="hero__ctas">
-            <button className="btn btn--primary" onClick={(e) => openEnquiry(e.currentTarget)}>Check availability</button>
+            <a className="btn btn--primary" href={LINKS.bookingEngine} target="_blank" rel="noopener">Book now</a>
             <a className="btn btn--ghost-light" href="#reels">Watch the stay <Icon name="play" /></a>
           </div>
         </div>

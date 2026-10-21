@@ -2,7 +2,7 @@
 
 Showcase homepage for **[The Bougainvillea Retreat](https://www.google.com/maps/place/?q=place_id:ChIJszFhFZHXCDkRW85IANosYic)**, a private pool villa in Bhagwant Pur, Dehradun (Uttarakhand, India) — mountain views, candlelit dinners and rooftop dining at the Terrace of Doon. Rated 4.7/5 from 506+ Google reviews.
 
-- Book / enquire: WhatsApp [+91 92584 97632](https://wa.me/919258497632) · [Booking.com listing](https://www.booking.com/hotel/in/the-bougainvillea-riverside.html)
+- Book / enquire: [Direct Booking Engine (DigiBooking)](https://digibooking.in/H433) · WhatsApp [+91 92584 97632](https://wa.me/919258497632) · [Booking.com listing](https://www.booking.com/hotel/in/the-bougainvillea-riverside.html)
 - Business profile: [the-bougainvillea-villa.grexa.site](https://the-bougainvillea-villa.grexa.site/)
 
 Built with React 19 + Vite, statically prerendered so search engines and social previews receive the full page HTML.
@@ -45,7 +45,7 @@ A ready workflow lives at `deploy/github-pages-workflow.yml`. Move it to `.githu
 
 ## Booking behaviour
 
-No rates or inventory are shown. "Check availability" opens an enquiry form that composes a WhatsApp message (`PROPERTY.whatsapp` in `src/data/site.js`). Booking.com is linked as a secondary option.
+Direct booking CTAs ("Book now", "Book this stay") link directly to the official DigiBooking engine (`https://digibooking.in/H433?utm_source=website`). WhatsApp concierge is linked for direct communication, and Booking.com is linked as a secondary OTA option.
 
 ## Media sources
 

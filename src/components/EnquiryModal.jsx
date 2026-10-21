@@ -113,7 +113,9 @@ export default function EnquiryModal({ open, onClose, returnFocus, room }) {
         <p className="enquiry__error" role="alert">{error}</p>
         <button type="submit" className="btn btn--primary btn--block"><Icon name="whatsapp" /> Send on WhatsApp</button>
         <p className="enquiry__alt">
-          or <a href={LINKS.booking} target="_blank" rel="noopener">view our Booking.com listing ↗</a>
+          or <a href={LINKS.bookingEngine} target="_blank" rel="noopener">book directly on DigiBooking ↗</a>
+          <br />
+          <a href={LINKS.booking} target="_blank" rel="noopener">view our Booking.com listing ↗</a>
         </p>
       </form>
     </dialog>

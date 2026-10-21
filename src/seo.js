@@ -54,11 +54,11 @@ export function buildJsonLd() {
       numberOfRooms: r.units,
       amenityFeature: r.features.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true }))
     })),
-    sameAs: [LINKS.googleMaps, LINKS.booking, LINKS.businessSite],
+    sameAs: [LINKS.bookingEngine, LINKS.googleMaps, LINKS.booking, LINKS.businessSite],
     potentialAction: {
       '@type': 'ReserveAction',
-      target: `https://wa.me/${PROPERTY.whatsapp}`,
-      name: 'Check availability on WhatsApp'
+      target: LINKS.bookingEngine,
+      name: 'Book a room online'
     }
   };
 

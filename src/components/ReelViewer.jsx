@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { REELS } from '../data/site.js';
+import { REELS, LINKS } from '../data/site.js';
 import { video, poster } from '../lib/asset.js';
 import { BloomMark, Icon } from './Botanical.jsx';
-import { useModal, useUi } from '../lib/ui.js';
+import { useModal } from '../lib/ui.js';
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -11,7 +11,6 @@ export default function ReelViewer({ index, onIndex, onClose, returnFocus }) {
   const dialog = useModal(open, onClose, returnFocus);
   const vid = useRef(null);
   const closeBtn = useRef(null);
-  const { openEnquiry } = useUi();
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -109,15 +108,15 @@ export default function ReelViewer({ index, onIndex, onClose, returnFocus }) {
         <div className="viewer__overlay">
           <p className="viewer__label"><BloomMark /> <span id="viewer-title">{reel?.title}</span></p>
           <p className="viewer__caption" id="viewer-caption">{reel?.longCaption}</p>
-          <button
+          <a
             className="btn btn--light btn--sm"
-            onClick={() => {
-              dialog.current.close();
-              openEnquiry(null);
-            }}
+            href={LINKS.bookingEngine}
+            target="_blank"
+            rel="noopener"
+            onClick={() => dialog.current.close()}
           >
-            Check availability
-          </button>
+            Book now
+          </a>
         </div>
       </div>
       <button className="viewer__nav viewer__nav--prev icon-btn" aria-label="Previous reel" onClick={() => go(-1)}>
