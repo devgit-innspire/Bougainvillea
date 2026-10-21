@@ -30,6 +30,7 @@ export const LINKS = {
   directions:
     'https://www.google.com/maps/dir/?api=1&destination=The+Bougainvillea+Retreat%2C+Bhagwant+Pur%2C+Dehradun&destination_place_id=ChIJszFhFZHXCDkRW85IANosYic',
   mapEmbed: 'https://www.google.com/maps?q=30.4143969,78.0687796&z=14&output=embed',
+  bookingEngine: 'https://digibooking.in/H433?utm_source=website',
   booking: 'https://www.booking.com/hotel/in/the-bougainvillea-riverside.html',
   businessSite: 'https://the-bougainvillea-villa.grexa.site/'
 };

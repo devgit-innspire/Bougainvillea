@@ -1,16 +1,14 @@
 import { useRef, useState } from 'react';
-import { ROOMS, TOTAL_ROOMS, roomPhotoPath } from '../data/site.js';
+import { ROOMS, TOTAL_ROOMS, roomPhotoPath, LINKS } from '../data/site.js';
 import { img } from '../lib/asset.js';
 import { Eyebrow, BloomMark, Icon, Wave } from './Botanical.jsx';
 import Lightbox from './Lightbox.jsx';
-import { useUi } from '../lib/ui.js';
 
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const word = (n) => WORDS[n] || String(n);
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 function StayCard({ room, onPhotos }) {
-  const { openEnquiry } = useUi();
   const [cover, ...rest] = room.photos;
   const thumbs = rest.slice(0, 3);
   const more = room.photos.length - 1 - thumbs.length;
@@ -50,9 +48,9 @@ function StayCard({ room, onPhotos }) {
           {room.features.map((f) => <li key={f}>{f}</li>)}
         </ul>
         <div className="stay__ctas">
-          <button className="btn btn--primary btn--sm" onClick={(e) => openEnquiry(e.currentTarget, { room: room.name })}>
-            Enquire for this stay
-          </button>
+          <a className="btn btn--primary btn--sm" href={LINKS.bookingEngine} target="_blank" rel="noopener">
+            Book this stay
+          </a>
           <button className="stay__link" onClick={(e) => onPhotos(room, 0, e.currentTarget)}>
             View {room.photos.length} photos <Icon name="right" />
           </button>
@@ -81,7 +79,7 @@ export default function Stays() {
             <h2 id="stays-title">{cap(word(TOTAL_ROOMS))} rooms, {word(ROOMS.length)} ways to stay.</h2>
           </div>
           <p className="section-head__aside section-head__aside--dark">
-            A one-bedroom villa, valley-view rooms, a private pool villa and timber cottages — rates and availability shared on enquiry.
+            A one-bedroom villa, valley-view rooms, a private pool villa and timber cottages — check live rates and book online.
           </p>
         </div>
 
