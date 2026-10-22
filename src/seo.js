@@ -45,7 +45,7 @@ export function buildJsonLd() {
     petsAllowed: true,
     numberOfRooms: TOTAL_ROOMS,
     containsPlace: ROOMS.map((r) => ({
-      '@type': r.id === 'tara-villa' ? 'Suite' : 'HotelRoom',
+      '@type': r.id === 'tara-villa' || r.id === 'three-bhk-villa' ? 'Suite' : 'HotelRoom',
       '@id': `${SITE_URL}/#stay-${r.id}`,
       name: `${r.name} — ${PROPERTY.name}`,
       description: r.text,

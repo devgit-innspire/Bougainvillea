@@ -79,13 +79,13 @@ export default function Stays() {
             <h2 id="stays-title">{cap(word(TOTAL_ROOMS))} rooms, {word(ROOMS.length)} ways to stay.</h2>
           </div>
           <p className="section-head__aside section-head__aside--dark">
-            A one-bedroom villa, valley-view rooms, a private pool villa and timber cottages — check live rates and book online.
+            A one-bedroom villa, valley-view rooms, a combined 3 BHK villa, a private pool villa and timber cottages — check live rates and book online.
           </p>
         </div>
 
         <ul className="stays__summary" aria-label="Room count by stay type">
           {ROOMS.map((r) => (
-            <li key={r.id}><a href={`#stay-${r.id}`}><strong>{r.units}</strong> {r.name}</a></li>
+            <li key={r.id}><a href={`#stay-${r.id}`}><strong>{r.summaryCount || r.units}</strong> {r.shortName || r.name}</a></li>
           ))}
           <li className="stays__total"><strong>{TOTAL_ROOMS}</strong> rooms in total</li>
         </ul>
