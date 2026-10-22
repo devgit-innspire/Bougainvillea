@@ -53,6 +53,6 @@ Direct booking CTAs ("Book now", "Book this stay") link directly to the official
 - Photos and review quotes: the property's Google Business Profile (reviewer names shortened).
 - Room photos (`public/assets/img/rooms/`): client Drive folder `drive-download-20250706T134128Z-1-001`, matched by filename (Tara Villa, Valley View, Rustic Cottage, Swimming Pool).
 
-## Rooms
+## Rooms & Stays
 
-7 rooms across 4 stay types, defined in `ROOMS` in `src/data/site.js`: Tara Villa (1 BHK), Valley View Rooms (2), Private Pool Villa (2), Rustic Cottages (2). The Stays section, the enquiry form's *Stay* menu, JSON-LD `numberOfRooms`/`containsPlace` and the sitemap's image entries all read from it.
+7 physical rooms across 5 stay types, defined in `ROOMS` in `src/data/site.js`: Tara Villa (1 BHK), Valley View Rooms (2 rooms), 3 BHK Villa (combining 1 BHK Tara Villa and both Valley View rooms for groups/families), Private Pool Villa (2 rooms around a private indoor pool), and Rustic Cottages (2 timber A-frame cottages). The Stays section, the enquiry form's *Stay* menu, JSON-LD `numberOfRooms`/`containsPlace` and the sitemap's image entries all read from it.
