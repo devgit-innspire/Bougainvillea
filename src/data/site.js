@@ -136,10 +136,9 @@ export const ROOMS = [
     features: ['Private indoor pool', '2 Bedrooms', 'Suite lounge', 'Pool deck & loungers'],
     photos: [
       { img: 'pool-villa-pool', alt: 'Private indoor pool with blue lighting and a stone feature wall' },
-      { img: 'pool-villa-lounge', alt: 'Private Pool Villa suite lounge with sofa bed, lamp and study desk' },
       { img: 'pool-villa-suite', alt: 'Pool Villa suite bedroom and lounge overlooking the indoor pool stone wall' },
       { img: 'pool-villa-bedroom', alt: 'Pool Villa bedroom with king bed and patterned teal feature wall' },
-      { img: 'pool-villa-bedroom2', alt: 'Pool Villa bedroom with king bed, wardrobe and vanity desk' },
+      { img: 'pool-villa-lounge', alt: 'Private Pool Villa suite lounge with sofa bed, lamp and study desk' },
       { img: 'pool-villa-seating', alt: 'Lounge seating area beside the private indoor pool glass wall' },
       { img: 'pool-loungers', alt: 'Indoor pool lined with palms and loungers', shared: true },
       { img: 'indoor-pool', alt: 'Private pool with wooden loungers', shared: true }
