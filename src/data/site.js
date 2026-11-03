@@ -32,7 +32,8 @@ export const LINKS = {
   mapEmbed: 'https://www.google.com/maps?q=30.4143969,78.0687796&z=14&output=embed',
   bookingEngine: 'https://digibooking.in/H433?utm_source=website',
   booking: 'https://www.booking.com/hotel/in/the-bougainvillea-riverside.html',
-  businessSite: 'https://the-bougainvillea-villa.grexa.site/'
+  businessSite: 'https://the-bougainvillea-villa.grexa.site/',
+  instagram: 'https://www.instagram.com/bougainvillearetreat/'
 };
 
 export const waLink = (text) => `https://wa.me/${PROPERTY.whatsapp}?text=${encodeURIComponent(text)}`;
@@ -167,13 +168,33 @@ export const TOTAL_ROOMS = ROOMS.filter((r) => !r.isCombination).reduce((n, r) =
 // Rooms photos live in assets/img/rooms/, except shared shots reused from the main set.
 export const roomPhotoPath = (p) => (p.shared ? p.img : `rooms/${p.img}`);
 
+// Reels: the original three cuts plus Instagram reels from @bougainvillearetreat and guest
+// creators. `credit` / `source` attribute the guest creators' videos back to their posts.
 export const REELS = [
+  {
+    id: 'winterline',
+    title: 'Winterline mornings',
+    caption: 'First light over the hills, chai in hand.',
+    longCaption: 'A winterline worth waking up for — first light over the hills, a warm cup of chai and nowhere to rush to.',
+    duration: 'PT17S',
+    uploadDate: '2026-10-01',
+    source: 'https://www.instagram.com/reel/Dd9Hpgzp6yw/'
+  },
   {
     id: 'the-villa',
     title: 'The villa',
     caption: 'Timber gables, terraced gardens and valley views.',
     longCaption: 'Timber gables, terraced gardens and wide valley views.',
     duration: 'PT22S'
+  },
+  {
+    id: 'golden-sunset',
+    title: 'Sunset, the main event',
+    caption: 'Golden skies over the Doon valley.',
+    longCaption: 'Close the laptop and step outside — golden skies and valley views make sunset the main event.',
+    duration: 'PT18S',
+    uploadDate: '2026-10-07',
+    source: 'https://www.instagram.com/reel/DeMf-98Jm1g/'
   },
   {
     id: 'poolside',
@@ -183,11 +204,41 @@ export const REELS = [
     duration: 'PT20S'
   },
   {
+    id: 'date-night-dinner',
+    title: 'A date like this',
+    caption: 'Candlelit dinner for two under timber beams.',
+    longCaption: 'Clubbing is overrated — a candlelit dinner for two under the timber beams.',
+    duration: 'PT30S',
+    uploadDate: '2026-10-24',
+    credit: '@harshita.acts',
+    source: 'https://www.instagram.com/reel/De4Xf_2JnPj/'
+  },
+  {
     id: 'date-nights',
     title: 'Date nights & celebrations',
     caption: 'Candlelit dinners as the valley lights up.',
     longCaption: 'Candlelit dinners on the Terrace of Doon as the valley lights up.',
     duration: 'PT19S'
+  },
+  {
+    id: 'candlelit-terrace',
+    title: 'This side of Dehradun',
+    caption: 'Candlelit tables above the city lights.',
+    longCaption: 'Candlelit tables on the terrace, with the city lights of Dehradun spread out below.',
+    duration: 'PT10S',
+    uploadDate: '2026-10-02',
+    credit: '@thefeelingrapher',
+    source: 'https://www.instagram.com/reel/Dd_mKzGz204/'
+  },
+  {
+    id: 'dehradun-getaway',
+    title: 'Your next getaway',
+    caption: 'A-frame cottages, gardens and golden light.',
+    longCaption: 'Your next Dehradun getaway — A-frame cottages, terraced gardens and golden-hour light.',
+    duration: 'PT36S',
+    uploadDate: '2026-11-01',
+    credit: '@shweta22sharma',
+    source: 'https://www.instagram.com/reel/DfNB9EYIrPF/'
   }
 ];
 
@@ -210,7 +261,7 @@ export const GALLERY = [
   { img: 'villa-steps', cat: 'villa', size: 'wide', alt: 'Stone steps leading up to the A-frame villa at golden hour' },
   { img: 'pool-loungers', cat: 'pool', alt: 'Indoor pool lined with palms and loungers' },
   { img: 'aframe-bedroom', cat: 'rooms', size: 'tall', alt: 'Rustic Cottage bedroom under a timber A-frame ceiling' },
-  { img: 'terrace-view', cat: 'dining', alt: 'Open terrace with umbrella seating and a misty valley view' },
+  { img: 'terrace-view', cat: 'dining', size: 'wide', alt: 'Open terrace with umbrella seating and a misty valley view' },
   { img: 'living-room', cat: 'rooms', alt: 'Living room with cushioned sofas and hill views' },
   { img: 'city-lights', cat: 'dining', size: 'wide', alt: 'Dehradun city lights glittering across the valley at night' },
   { img: 'swing-patio', cat: 'villa', alt: 'Swing seat on a tiled patio beneath bougainvillea' },
@@ -218,9 +269,20 @@ export const GALLERY = [
   { img: 'suite', cat: 'rooms', alt: 'Suite with pink curtains and a timber ceiling' },
   { img: 'garden-bougainvillea', cat: 'villa', alt: 'Garden lawn with flowering bougainvillea' },
   { img: 'night-dining', cat: 'dining', size: 'wide', alt: 'Candlelit rooftop tables above the city at night' },
-  { img: 'lounge', cat: 'rooms', alt: 'Lounge with sectional sofa and valley view' },
+  { img: 'terrace-dusk', cat: 'dining', size: 'wide', alt: 'Terrace with lantern-lit railings and seating at dusk, purple sky over the hills' },
+  { img: 'lounge', cat: 'rooms', size: 'wide', alt: 'Lounge with sectional sofa and valley view' },
   { img: 'bathroom', cat: 'rooms', alt: 'Modern bathroom with vessel basin and glass shower' },
-  { img: 'sunset-swing', cat: 'villa', alt: 'Swing silhouetted at sunset over the hills' }
+  { img: 'sunset-swing', cat: 'villa', size: 'wide', alt: 'Swing silhouetted at sunset over the hills' }
+];
+
+// Photo posts from @bougainvillearetreat on Instagram (portrait 4:5 graphics with text overlays,
+// so they get their own grid rather than being cropped in the gallery). Files in assets/img/insta/.
+export const INSTA_POSTS = [
+  { img: 'dine-amidst-blooms', alt: 'Dine amidst the blooms — garden lunch table beside a swing seat', href: 'https://www.instagram.com/p/DfFbCsTSbhx/' },
+  { img: 'beside-the-peaks', alt: 'Beside the peaks, under the sky — terrace dining tables against the hills' },
+  { img: 'blooming-vibes', alt: 'Blooming vibes, breathtaking views — high tea on the garden terrace at sunset' },
+  { img: 'morning-views', alt: 'Morning views with every bite — breakfast parathas and chai on the valley balcony' },
+  { img: 'hills-turn-golden', alt: 'When the hills turn golden — sunset between cypress trees over the valley', href: 'https://www.instagram.com/p/DeZZypnJJvD/' }
 ];
 
 // Verbatim Google reviews (light punctuation fixes only); names shortened.

@@ -9,13 +9,14 @@ import Reels from './components/Reels.jsx';
 import ReelViewer from './components/ReelViewer.jsx';
 import Experiences from './components/Experiences.jsx';
 import Gallery from './components/Gallery.jsx';
+import Instagram from './components/Instagram.jsx';
 import Reviews from './components/Reviews.jsx';
 import Location from './components/Location.jsx';
 import { FinalCta, Footer, FloatingCta } from './components/Closing.jsx';
 import EnquiryModal from './components/EnquiryModal.jsx';
 
 const REVEAL_SELECTOR =
-  '.section-head, .reviews__head, .story__text, .story__media, .hl, .stay, .reel-card, .exp, .rev, .loc__text, .loc__map';
+  '.section-head, .reviews__head, .story__text, .story__media, .hl, .stay, .reel-card, .insta-post, .exp, .rev, .loc__text, .loc__map';
 
 export default function App() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -85,6 +86,7 @@ export default function App() {
         <Reels />
         <Experiences />
         <Gallery />
+        <Instagram />
         <Reviews />
         <Location />
         <FinalCta />

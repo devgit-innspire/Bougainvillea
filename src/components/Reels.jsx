@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { REELS } from '../data/site.js';
+import { REELS, LINKS } from '../data/site.js';
 import { video, poster } from '../lib/asset.js';
 import { Eyebrow, BloomMark, Icon, PetalDrift, Wave } from './Botanical.jsx';
 import { useUi, prefersReducedMotion } from '../lib/ui.js';
@@ -55,19 +55,36 @@ function ReelCard({ reel, index }) {
 export default function Reels() {
   const track = useRef(null);
   const [active, setActive] = useState(0);
+  const [edges, setEdges] = useState({ start: true, end: false });
 
-  // Mobile carousel position dots.
+  // Position dots + arrow state, derived from the rail's scroll offset.
   useEffect(() => {
     const el = track.current;
-    if (!el || !('IntersectionObserver' in window)) return;
-    const cards = [...el.children];
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(cards.indexOf(e.target))),
-      { root: el, threshold: 0.6 }
-    );
-    cards.forEach((c) => io.observe(c));
-    return () => io.disconnect();
+    if (!el) return;
+    let raf = 0;
+    const sync = () => {
+      raf = 0;
+      const first = el.children[0];
+      const step = first ? first.getBoundingClientRect().width + parseFloat(getComputedStyle(el).columnGap || 0) : 1;
+      const max = el.scrollWidth - el.clientWidth;
+      setActive(Math.min(REELS.length - 1, Math.round(el.scrollLeft / step)));
+      setEdges({ start: el.scrollLeft <= 4, end: el.scrollLeft >= max - 4 });
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(sync); };
+    sync();
+    el.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      el.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      cancelAnimationFrame(raf);
+    };
   }, []);
+
+  const page = (dir) => {
+    const el = track.current;
+    el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  };
 
   return (
     <section className="reels section section--dark" id="reels" aria-labelledby="reels-title">
@@ -80,7 +97,7 @@ export default function Reels() {
             <h2 id="reels-title">See the stay in motion</h2>
           </div>
           <p className="section-head__aside">
-            From poolside afternoons to candlelit evenings, take a glimpse inside The Bougainvillea Retreat.
+            From winterline mornings to candlelit evenings, take a glimpse inside The Bougainvillea Retreat.
           </p>
         </div>
 
@@ -88,11 +105,20 @@ export default function Reels() {
           <ul className="reel-track" ref={track}>
             {REELS.map((r, i) => <ReelCard key={r.id} reel={r} index={i} />)}
           </ul>
-          <div className="reel-rail__controls" aria-hidden="true">
-            <span className="reel-dots">
+          <div className="reel-rail__controls">
+            <button className="icon-btn reel-rail__arrow" aria-label="Scroll reels left" disabled={edges.start} onClick={() => page(-1)}>
+              <Icon name="left" className="" />
+            </button>
+            <span className="reel-dots" aria-hidden="true">
               {REELS.map((r, i) => <i key={r.id} className={i === active ? 'is-active' : ''} />)}
             </span>
+            <button className="icon-btn reel-rail__arrow" aria-label="Scroll reels right" disabled={edges.end} onClick={() => page(1)}>
+              <Icon name="right" className="" />
+            </button>
           </div>
+          <p className="reel-rail__follow">
+            <a href={LINKS.instagram} target="_blank" rel="noopener">More on Instagram @bougainvillearetreat <Icon name="right" /></a>
+          </p>
         </div>
       </div>
     </section>

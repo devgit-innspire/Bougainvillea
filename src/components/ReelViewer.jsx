@@ -108,6 +108,13 @@ export default function ReelViewer({ index, onIndex, onClose, returnFocus }) {
         <div className="viewer__overlay">
           <p className="viewer__label"><BloomMark /> <span id="viewer-title">{reel?.title}</span></p>
           <p className="viewer__caption" id="viewer-caption">{reel?.longCaption}</p>
+          {reel?.source && (
+            <p className="viewer__credit">
+              <a href={reel.source} target="_blank" rel="noopener">
+                {reel.credit ? `Video by ${reel.credit}` : 'Watch on Instagram'}
+              </a>
+            </p>
+          )}
           <a
             className="btn btn--light btn--sm"
             href={LINKS.bookingEngine}

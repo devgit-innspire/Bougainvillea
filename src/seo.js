@@ -88,7 +88,7 @@ export function buildJsonLd() {
     description: r.longCaption,
     thumbnailUrl: abs(`assets/img/poster-${r.id}.jpg`),
     contentUrl: abs(`assets/video/${r.id}.mp4`),
-    uploadDate: PUBLISHED,
+    uploadDate: r.uploadDate || PUBLISHED,
     duration: r.duration
   }));
 
