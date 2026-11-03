@@ -18,10 +18,12 @@ export default function Hero() {
         </picture>
         <div className="hero__shade" aria-hidden="true" />
         <div className="wrap hero__content">
-          <Eyebrow light>Villa, cottages &amp; pool villa · Dehradun</Eyebrow>
           <h1 id="hero-title">
-            A quiet hillside escape,<br />
-            <em>in full bloom.</em>
+            <Eyebrow light as="span">Luxury homestay &amp; private pool villa in Dehradun</Eyebrow>
+            <span className="hero__tagline">
+              A quiet hillside escape,<br />
+              <em>in full bloom.</em>
+            </span>
           </h1>
           <p className="hero__lede">
             Poolside afternoons, mountain light and candlelit evenings — tucked away in Bhagwant Pur, above the Doon valley.

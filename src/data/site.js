@@ -6,9 +6,9 @@ export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'http://localhost:5173
 export const PROPERTY = {
   name: 'The Bougainvillea Retreat',
   shortName: 'Bougainvillea Retreat',
-  tagline: 'Private pool villa in Dehradun',
+  tagline: 'Luxury homestay & private pool villa in Dehradun',
   description:
-    'A quietly luxurious hillside retreat in Bhagwant Pur, Dehradun with 7 rooms — Tara Villa (1 BHK), Valley View rooms (available single or combined as a 3 BHK Villa), a Private Pool Villa and Rustic Cottages. Mountain views, candlelit evenings and rooftop dining. Rated 4.7/5 from 506+ Google reviews.',
+    'A luxury homestay on a quiet hillside in Bhagwant Pur, Dehradun with 7 rooms — Tara Villa (1 BHK), Valley View rooms (available single or combined as a 3 BHK Villa), a Private Pool Villa and Rustic Cottages. Mountain views, candlelit evenings and rooftop dining. Rated 4.7/5 from 506+ Google reviews.',
   phone: '+919258497632',
   phoneDisplay: '+91 92584 97632',
   whatsapp: '919258497632',
@@ -58,7 +58,7 @@ export const TRUST = [
 
 export const HIGHLIGHTS = [
   { img: 'indoor-pool', title: 'Private pool', text: 'An exclusive pool just for your group — no sharing, no interruptions.', alt: 'Indoor pool with stone wall and loungers', tall: true },
-  { img: 'sunset-swing', title: 'Mountain & valley views', text: 'Wake to green hills; watch the city lights come on at night.', alt: 'Garden swing silhouetted against a hillside sunset' },
+  { img: 'sunset-swing', title: 'Mountain & valley views', text: 'Wake to the winterline over green hills; watch the city lights come on at night.', alt: 'Garden swing silhouetted against a hillside sunset' },
   { img: 'night-dining', title: 'Terrace of Doon', text: 'Rooftop dining with a 360° view, bonfires and barbecue evenings.', alt: 'Candlelit rooftop dining tables overlooking the city at night' },
   { img: 'bedroom-view', title: 'Spacious, cosy interiors', text: 'Timber ceilings, soft light and corners made for slow mornings.', alt: 'Bright bedroom with a large window looking out to the hills' },
   { img: 'garden-bougainvillea', title: 'Gardens in bloom', text: 'Terraced lawns, swings and bougainvillea everywhere you look.', alt: 'Lawn and garden framed by flowering bougainvillea' }
@@ -243,10 +243,10 @@ export const REELS = [
 ];
 
 export const EXPERIENCES = [
-  { img: 'night-terrace', title: 'Couples', text: 'Romantic stays with peaceful surroundings, cosy interiors and candlelight dinners arranged for two.', alt: 'Lantern-lit terrace seating at night above the city' },
-  { img: 'lawn', title: 'Families', text: 'Spacious rooms, open lawns and a safe, relaxed setting for getaways with children and loved ones.', alt: 'Wide green lawn beside the villa with hills behind' },
+  { img: 'night-terrace', title: 'Couples', text: 'Romantic stays with peaceful surroundings, cosy interiors and private candlelight dinners arranged for two.', alt: 'Lantern-lit terrace seating at night above the city' },
+  { img: 'lawn', title: 'Families & groups', text: 'Spacious rooms, a 3 BHK villa, open lawns and a safe, relaxed setting for getaways with children and loved ones.', alt: 'Wide green lawn beside the villa with hills behind' },
   { img: 'swing-patio', title: 'Celebrations', text: 'Birthdays, anniversaries and proposals — with beautiful spaces that make every moment memorable.', alt: 'Garden patio with a swing seat under flowering bougainvillea' },
-  { img: 'villa-hillside', title: 'Pets welcome', text: 'Your furry companions are part of the family — relax together surrounded by nature.', alt: 'The villa on a green hillside with bougainvillea in bloom' }
+  { img: 'villa-hillside', title: 'Pet-friendly', text: 'Pets are welcome — your furry companions are part of the family, so relax together surrounded by nature.', alt: 'The villa on a green hillside with bougainvillea in bloom' }
 ];
 
 export const GALLERY_FILTERS = [

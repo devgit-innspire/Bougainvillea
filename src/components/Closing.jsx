@@ -12,7 +12,7 @@ export function FinalCta() {
       <div className="wrap final-cta__inner">
         <BloomRule className="bloom-rule--light" />
         <h2 id="cta-title">Planning a quiet escape?</h2>
-        <p>Book online directly or get in touch with our team.</p>
+        <p>Book your Dehradun getaway directly for the best rate, or message our team on WhatsApp.</p>
         <div className="hero__ctas">
           <a className="btn btn--light" href={LINKS.bookingEngine} target="_blank" rel="noopener">Book your stay</a>
           <a className="btn btn--ghost-light" href={waLink(WA_DEFAULT)} target="_blank" rel="noopener">
@@ -34,7 +34,7 @@ export function Footer() {
       <div className="wrap footer__grid">
         <div>
           <Brand light />
-          <p className="footer__tag">A private pool villa in the Doon hills.</p>
+          <p className="footer__tag">A luxury homestay and private pool villa in the Doon hills.</p>
         </div>
         <div>
           <h3>Visit</h3>
@@ -54,6 +54,7 @@ export function Footer() {
             <li><a href={LINKS.bookingEngine} target="_blank" rel="noopener">Book direct (Best rate)</a></li>
             <li><a href={LINKS.googleMaps} target="_blank" rel="noopener">Google Maps &amp; reviews</a></li>
             <li><a href={LINKS.booking} target="_blank" rel="noopener">Booking.com</a></li>
+            <li><a href={LINKS.instagram} target="_blank" rel="noopener">Instagram</a></li>
             <li><a href={LINKS.businessSite} target="_blank" rel="noopener">Business profile site</a></li>
           </ul>
         </div>

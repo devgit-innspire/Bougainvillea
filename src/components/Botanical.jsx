@@ -187,11 +187,11 @@ export function BloomRule({ className = '' }) {
 }
 
 /** Section eyebrow label with the flat bloom mark. */
-export function Eyebrow({ children, light = false }) {
+export function Eyebrow({ children, light = false, as: Tag = 'p' }) {
   return (
-    <p className={`eyebrow${light ? ' eyebrow--light' : ''}`}>
+    <Tag className={`eyebrow${light ? ' eyebrow--light' : ''}`}>
       <BloomMark />
       {children}
-    </p>
+    </Tag>
   );
 }

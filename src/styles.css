@@ -142,7 +142,9 @@ p { margin: 0 0 1em; }
   linear-gradient(180deg, rgba(20,28,25,.15) 0%, rgba(20,28,25,0) 30%, rgba(20,28,25,.3) 60%, rgba(20,28,25,.75) 100%); }
 @media (max-width: 900px) { .hero__shade { background: linear-gradient(180deg, rgba(20,28,25,.25) 0%, rgba(20,28,25,.55) 38%, rgba(20,28,25,.7) 60%, rgba(20,28,25,.9) 100%); } .hero h1 { text-shadow: 0 2px 24px rgba(0,0,0,.55); } }
 .hero__content { position: relative; padding-bottom: clamp(48px, 9vh, 104px); padding-top: 120px; }
-.hero h1 { max-width: 14ch; text-shadow: 0 2px 30px rgba(0,0,0,.25); }
+.hero h1 { text-shadow: 0 2px 30px rgba(0,0,0,.25); }
+.hero h1 .eyebrow { display: flex; width: fit-content; max-width: 100%; font-family: var(--sans); line-height: 1.5; text-shadow: none; }
+.hero__tagline { display: block; max-width: 14ch; }
 .hero__lede { max-width: 520px; font-size: clamp(17px, 1.5vw, 20px); color: rgba(255,255,255,.9); margin-bottom: 32px; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 

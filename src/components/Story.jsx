@@ -10,8 +10,9 @@ export function Story() {
           <Eyebrow>Our story</Eyebrow>
           <h2 id="story-title">Slow mornings, warm evenings, and room to breathe.</h2>
           <p>
-            The Bougainvillea Retreat sits on a quiet hillside in Bhagwant Pur, far from city noise yet an easy drive from
-            Dehradun. Timber A-frame roofs, terraced gardens and walls draped in bougainvillea frame wide views across the valley.
+            The Bougainvillea Retreat is a luxury homestay on a quiet hillside in Bhagwant Pur, far from city noise yet an easy
+            drive from Dehradun. Timber A-frame roofs, terraced gardens and walls draped in bougainvillea frame wide views across
+            the Doon valley.
           </p>
           <p>
             Come for a romantic weekend, a family getaway or a celebration with the people who matter — and let the days unfold

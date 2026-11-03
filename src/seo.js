@@ -1,7 +1,9 @@
-import { PROPERTY, LINKS, REELS, GALLERY, ROOMS, TOTAL_ROOMS, roomPhotoPath, SITE_URL } from './data/site.js';
+import { PROPERTY, LINKS, REELS, GALLERY, INSTA_POSTS, ROOMS, TOTAL_ROOMS, roomPhotoPath, SITE_URL } from './data/site.js';
 
 const abs = (path) => `${SITE_URL}/${path.replace(/^\//, '')}`;
 const PUBLISHED = '2026-10-14';
+// Bump when page content changes; used as the sitemap <lastmod>.
+const LAST_UPDATED = '2026-11-03';
 
 export function buildJsonLd() {
   const id = `${SITE_URL}/#lodging`;
@@ -11,7 +13,8 @@ export function buildJsonLd() {
     '@type': ['LodgingBusiness', 'Resort'],
     '@id': id,
     name: PROPERTY.name,
-    alternateName: 'Bougainvillea Retreat Dehradun',
+    alternateName: ['Bougainvillea Retreat Dehradun', 'The Bougainvillea Luxury Homestay'],
+    slogan: PROPERTY.tagline,
     description: PROPERTY.description,
     url: `${SITE_URL}/`,
     telephone: PROPERTY.phone,
@@ -54,7 +57,7 @@ export function buildJsonLd() {
       numberOfRooms: r.units,
       amenityFeature: r.features.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true }))
     })),
-    sameAs: [LINKS.bookingEngine, LINKS.googleMaps, LINKS.booking, LINKS.businessSite],
+    sameAs: [LINKS.googleMaps, LINKS.instagram, LINKS.booking, LINKS.businessSite],
     potentialAction: {
       '@type': 'ReserveAction',
       target: LINKS.bookingEngine,
@@ -75,7 +78,8 @@ export function buildJsonLd() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: `${SITE_URL}/`,
-    name: `${PROPERTY.name} · Villa, Cottages & Pool Villa Stays in Dehradun`,
+    name: `${PROPERTY.name} | Luxury Homestay & Pool Villa, Dehradun`,
+    description: PROPERTY.description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': id },
     primaryImageOfPage: abs('assets/img/hero-dusk.jpg'),
@@ -97,6 +101,7 @@ export function buildJsonLd() {
 
 export function buildSitemap() {
   const images = ['hero-dusk', ...new Set([...GALLERY.map((g) => g.img), ...ROOMS.flatMap((r) => r.photos.map(roomPhotoPath))])]
+    .concat(INSTA_POSTS.map((p) => `insta/${p.img}`))
     .map((n) => `    <image:image><image:loc>${abs(`assets/img/${n}.jpg`)}</image:loc></image:image>`)
     .join('\n');
   const videos = REELS.map(
@@ -114,7 +119,7 @@ export function buildSitemap() {
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>${SITE_URL}/</loc>
-    <lastmod>${PUBLISHED}</lastmod>
+    <lastmod>${LAST_UPDATED}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 ${images}

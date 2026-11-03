@@ -38,6 +38,23 @@ Vercel builds from `main` automatically (framework preset: Vite, build command `
 
 A ready workflow lives at `deploy/github-pages-workflow.yml`. Move it to `.github/workflows/deploy.yml` (pushing workflow files needs a token with the `workflow` scope), set **Settings → Pages → Source** to *GitHub Actions*, then run it from the Actions tab.
 
+### Keyword map
+
+One page, so each search intent is owned by one section: its heading, opening copy and image alt text. Every term is backed by a real fact about the property: the "Luxury Homestay" wordmark on its own Instagram posts, the room inventory in `ROOMS`, amenities shown in photos and Google reviews, and the owner's reel captions (winterline, sunsets). Don't add terms the property can't back up, such as resort, spa, nearby landmarks or distances, unless the client confirms them.
+
+| Intent | Primary / secondary terms | Where it lives |
+| --- | --- | --- |
+| Brand + core | luxury homestay in Dehradun, private pool villa in Dehradun, The Bougainvillea Retreat | `<title>`, meta description, H1 label line, OG/Twitter tags, JSON-LD `slogan` / `alternateName`, Story copy, footer tagline |
+| Room types | 3 BHK villa Dehradun, 1 BHK villa, A-frame / timber cottages, valley-view rooms | Stays H2 ("…ways to stay in Dehradun") + intro, room cards, JSON-LD `containsPlace` |
+| Pool | private pool, indoor pool villa | Highlights "Private pool", Private Pool Villa card, Poolside reel |
+| Views | mountain / valley view stay, winterline, sunset, city lights | Highlights "Mountain & valley views", reels (Winterline mornings, Sunset), Location copy |
+| Couples & occasions | romantic stay, candlelight dinner in Dehradun, birthdays, anniversaries, proposals | Experiences (Couples, Celebrations), Date-night reels, reviews |
+| Families & pets | family stay, groups, pet-friendly stay Dehradun | Experiences (Families & groups, Pet-friendly), JSON-LD `petsAllowed` |
+| Dining | rooftop dining, Terrace of Doon | Highlights "Terrace of Doon", gallery alt text |
+| Local | Bhagwant Pur, Dehradun, Uttarakhand, Doon valley | Story, Location H2 + copy, address, geo meta, JSON-LD `address` / `geo` |
+
+When copy changes, keep the term in the heading or first sentence of its section, once, written as a guest would read it. Bump `LAST_UPDATED` in `src/seo.js` so the sitemap `<lastmod>` stays honest.
+
 ### SEO checklist after go-live
 
 - Submit `sitemap.xml` in Google Search Console (it includes image and video entries).

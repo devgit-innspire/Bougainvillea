@@ -76,10 +76,10 @@ export default function Stays() {
         <div className="section-head section-head--split">
           <div>
             <Eyebrow>Stays</Eyebrow>
-            <h2 id="stays-title">{cap(word(TOTAL_ROOMS))} rooms, {word(ROOMS.length)} ways to stay.</h2>
+            <h2 id="stays-title">{cap(word(TOTAL_ROOMS))} rooms, {word(ROOMS.length)} ways to stay in Dehradun.</h2>
           </div>
           <p className="section-head__aside section-head__aside--dark">
-            A one-bedroom villa, valley-view rooms, a combined 3 BHK villa, a private pool villa and timber cottages — check live rates and book online.
+            A 1 BHK villa, valley-view rooms, a 3 BHK villa for families and groups, a private pool villa and timber A-frame cottages — check live rates and book online.
           </p>
         </div>
 

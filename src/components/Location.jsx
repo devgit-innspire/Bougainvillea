@@ -25,7 +25,7 @@ export default function Location() {
         <div className="loc__text">
           <Eyebrow>Location</Eyebrow>
           <h2 id="loc-title">Above the valley, close to the city.</h2>
-          <p>A peaceful hillside setting in Bhagwant Pur — away from the crowds, yet an easy drive from Dehradun.</p>
+          <p>A peaceful hillside setting in Bhagwant Pur, Dehradun (Uttarakhand) — away from the crowds, with the city lights of the Doon valley below.</p>
           <address>
             {PROPERTY.name}<br />
             {a.street}<br />
