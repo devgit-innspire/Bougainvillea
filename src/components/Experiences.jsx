@@ -1,15 +1,16 @@
-import { EXPERIENCES } from '../data/site.js';
+import { EXPERIENCES, SECTIONS } from '../data/site.js';
 import { img } from '../lib/asset.js';
 import { Eyebrow, Wave, Bloom } from './Botanical.jsx';
 
 export default function Experiences() {
+  const T = SECTIONS.experiences;
   return (
     <section className="experiences section" id="experiences" aria-labelledby="exp-title">
       <Wave variant="b" />
       <div className="wrap">
         <div className="section-head">
-          <Eyebrow>Experiences</Eyebrow>
-          <h2 id="exp-title">Made for the way you travel.</h2>
+          <Eyebrow>{T.eyebrow}</Eyebrow>
+          <h2 id="exp-title">{T.heading}</h2>
         </div>
         <div className="exp-grid">
           {EXPERIENCES.map((x) => (

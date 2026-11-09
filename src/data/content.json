@@ -1,0 +1,842 @@
+{
+  "seo": {
+    "language": "en-IN",
+    "title": "The Bougainvillea Retreat | Luxury Homestay & Pool Villa, Dehradun",
+    "description": "Luxury homestay in Bhagwant Pur, Dehradun: private pool villa, 1 & 3 BHK villas, A-frame cottages, valley views and candlelight dinners. Rated 4.7★ on Google.",
+    "socialTitle": "The Bougainvillea Retreat | Luxury Homestay & Pool Villa, Dehradun",
+    "socialDescription": "From poolside afternoons to candlelit evenings — a luxury homestay in the Doon hills with a private pool villa, 1 & 3 BHK villas and timber cottages.",
+    "socialImageAlt": "The Bougainvillea Retreat at dusk, lit up above a candlelit lawn dinner",
+    "themeColor": "#214E3F",
+    "locale": "en_IN",
+    "geoPlaceName": "Bhagwant Pur, Dehradun",
+    "noscriptBeforePhone": "Call or WhatsApp",
+    "noscriptAfterPhone": "to check availability.",
+    "alternateNames": [
+      "Bougainvillea Retreat Dehradun",
+      "The Bougainvillea Luxury Homestay"
+    ],
+    "images": [
+      "hero-dusk",
+      "villa-aframe",
+      "indoor-pool"
+    ],
+    "amenities": [
+      "Private pool",
+      "Mountain view",
+      "City view",
+      "Garden",
+      "Rooftop restaurant",
+      "Candlelight dinners"
+    ],
+    "petsAllowed": true,
+    "openingHours": {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "bookOnlineActionName": "Book a room online",
+    "published": "2026-10-14",
+    "lastUpdated": "2026-11-03"
+  },
+  "property": {
+    "name": "The Bougainvillea Retreat",
+    "shortName": "Bougainvillea Retreat",
+    "tagline": "Luxury homestay & private pool villa in Dehradun",
+    "description": "A luxury homestay on a quiet hillside in Bhagwant Pur, Dehradun with 7 rooms — Tara Villa (1 BHK), Valley View rooms (available single or combined as a 3 BHK Villa), a Private Pool Villa and Rustic Cottages. Mountain views, candlelit evenings and rooftop dining. Rated 4.7/5 from 506+ Google reviews.",
+    "phone": "+919258497632",
+    "phoneDisplay": "+91 92584 97632",
+    "whatsapp": "919258497632",
+    "address": {
+      "street": "241MI, Mauja, Punkul Gaon, Bhagwant Pur",
+      "locality": "Dehradun",
+      "region": "Uttarakhand",
+      "regionCode": "IN-UT",
+      "postalCode": "248009",
+      "country": "IN"
+    },
+    "geo": {
+      "lat": 30.4143969,
+      "lng": 78.0687796
+    },
+    "rating": {
+      "value": 4.7,
+      "count": 506
+    },
+    "hours": "Open 24 hours, every day"
+  },
+  "links": {
+    "googleMaps": "https://www.google.com/maps/place/?q=place_id:ChIJszFhFZHXCDkRW85IANosYic",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=The+Bougainvillea+Retreat%2C+Bhagwant+Pur%2C+Dehradun&destination_place_id=ChIJszFhFZHXCDkRW85IANosYic",
+    "mapEmbed": "https://www.google.com/maps?q=30.4143969,78.0687796&z=14&output=embed",
+    "bookingEngine": "https://digibooking.in/H433?utm_source=website",
+    "booking": "https://www.booking.com/hotel/in/the-bougainvillea-riverside.html",
+    "businessSite": "https://the-bougainvillea-villa.grexa.site/",
+    "instagram": "https://www.instagram.com/bougainvillearetreat/"
+  },
+  "whatsappDefaultMessage": "Hi! I'd like to enquire about a stay at The Bougainvillea Retreat.",
+  "nav": [
+    {
+      "href": "#story",
+      "label": "The villa"
+    },
+    {
+      "href": "#stays",
+      "label": "Stays"
+    },
+    {
+      "href": "#reels",
+      "label": "Reels"
+    },
+    {
+      "href": "#experiences",
+      "label": "Experiences"
+    },
+    {
+      "href": "#gallery",
+      "label": "Gallery"
+    },
+    {
+      "href": "#reviews",
+      "label": "Reviews"
+    },
+    {
+      "href": "#location",
+      "label": "Location"
+    }
+  ],
+  "sections": {
+    "header": {
+      "skipLinkLabel": "Skip to content",
+      "location": "Bhagwant Pur, Dehradun",
+      "frontDesk": "Front desk open 24 hours",
+      "brandName": "The Bougainvillea",
+      "brandNameEmphasis": "Retreat",
+      "brandAriaLabel": "{name}, home",
+      "navAriaLabel": "Primary",
+      "bookLabel": "Book now"
+    },
+    "hero": {
+      "imageAlt": "The Bougainvillea Retreat at dusk, its A-frame villa lit warmly above a candlelit dinner table on the lawn",
+      "eyebrow": "Luxury homestay & private pool villa in Dehradun",
+      "headingLine1": "A quiet hillside escape,",
+      "headingLine2": "in full bloom.",
+      "intro": "Poolside afternoons, mountain light and candlelit evenings — tucked away in Bhagwant Pur, above the Doon valley.",
+      "bookLabel": "Book now",
+      "watchLabel": "Watch the stay"
+    },
+    "trust": {
+      "ariaLabel": "At a glance",
+      "items": [
+        {
+          "title": "Private pool",
+          "detail": "In the Private Pool Villa"
+        },
+        {
+          "title": "Mountain views",
+          "detail": "Doon valley & city lights"
+        },
+        {
+          "title": "4.7 / 5",
+          "detail": "506+ Google reviews",
+          "showStar": true
+        },
+        {
+          "title": "7 rooms",
+          "detail": "Five ways to stay"
+        }
+      ]
+    },
+    "story": {
+      "eyebrow": "Our story",
+      "heading": "Slow mornings, warm evenings, and room to breathe.",
+      "paragraphs": [
+        "The Bougainvillea Retreat is a luxury homestay on a quiet hillside in Bhagwant Pur, far from city noise yet an easy drive from Dehradun. Timber A-frame roofs, terraced gardens and walls draped in bougainvillea frame wide views across the Doon valley.",
+        "Come for a romantic weekend, a family getaway or a celebration with the people who matter — and let the days unfold around the pool, the garden and the long golden hour."
+      ],
+      "signature": "— Bhagwant Pur, Dehradun",
+      "images": [
+        {
+          "img": "villa-aframe",
+          "alt": "Timber A-frame gables of the villa with potted flowers along the terrace"
+        },
+        {
+          "img": "bougainvillea-entrance",
+          "alt": "Bougainvillea arching over the garden entrance and seating area"
+        }
+      ]
+    },
+    "highlights": {
+      "eyebrow": "Villa highlights",
+      "heading": "Everything you need to do very little.",
+      "items": [
+        {
+          "img": "indoor-pool",
+          "title": "Private pool",
+          "text": "An exclusive pool just for your group — no sharing, no interruptions.",
+          "alt": "Indoor pool with stone wall and loungers",
+          "tall": true
+        },
+        {
+          "img": "sunset-swing",
+          "title": "Mountain & valley views",
+          "text": "Wake to the winterline over green hills; watch the city lights come on at night.",
+          "alt": "Garden swing silhouetted against a hillside sunset"
+        },
+        {
+          "img": "night-dining",
+          "title": "Terrace of Doon",
+          "text": "Rooftop dining with a 360° view, bonfires and barbecue evenings.",
+          "alt": "Candlelit rooftop dining tables overlooking the city at night"
+        },
+        {
+          "img": "bedroom-view",
+          "title": "Spacious, cosy interiors",
+          "text": "Timber ceilings, soft light and corners made for slow mornings.",
+          "alt": "Bright bedroom with a large window looking out to the hills"
+        },
+        {
+          "img": "garden-bougainvillea",
+          "title": "Gardens in bloom",
+          "text": "Terraced lawns, swings and bougainvillea everywhere you look.",
+          "alt": "Lawn and garden framed by flowering bougainvillea"
+        }
+      ]
+    },
+    "stays": {
+      "eyebrow": "Stays",
+      "heading": "{totalRooms} rooms, {stayTypes} ways to stay in Dehradun.",
+      "intro": "A 1 BHK villa, valley-view rooms, a 3 BHK villa for families and groups, a private pool villa and timber A-frame cottages — check live rates and book online.",
+      "summaryAriaLabel": "Room count by stay type",
+      "totalLabel": "rooms in total",
+      "bookLabel": "Book this stay",
+      "viewPhotosLabel": "View {count} photos",
+      "viewPhotosAriaLabel": "View {name} photos",
+      "openPhotoAriaLabel": "Open photo: {alt}",
+      "featuresAriaLabel": "{name} features",
+      "rooms": [
+        {
+          "id": "tara-villa",
+          "name": "Tara Villa",
+          "shortName": "Tara Villa (1 BHK)",
+          "units": 1,
+          "unitLabel": "1 BHK villa",
+          "summaryCount": "1",
+          "text": "A self-contained one-bedroom villa with its own kitchen, a sunlit living area and a balcony looking out over the Doon valley. Available on its own, or combined with Valley View rooms as a 3 BHK villa.",
+          "features": [
+            "1 BHK",
+            "Private kitchen",
+            "Living area",
+            "Valley-view balcony",
+            "Available single or 3 BHK"
+          ],
+          "photos": [
+            {
+              "img": "tara-bedroom",
+              "alt": "Tara Villa bedroom with king bed and bay window overlooking the valley"
+            },
+            {
+              "img": "tara-living",
+              "alt": "Tara Villa living area with sofa opening onto a valley-view balcony"
+            },
+            {
+              "img": "tara-balcony",
+              "alt": "Tara Villa balcony seating overlooking the hills at sunset"
+            },
+            {
+              "img": "tara-kitchen",
+              "alt": "Tara Villa kitchen with hob, chimney, microwave and fridge"
+            },
+            {
+              "img": "tara-bath",
+              "alt": "Tara Villa bathroom with blue tiles and vessel basin"
+            },
+            {
+              "img": "tara-garden",
+              "alt": "Lawn seating with a swing beside Tara Villa"
+            }
+          ]
+        },
+        {
+          "id": "valley-view",
+          "name": "Valley View Rooms",
+          "shortName": "Valley View Rooms",
+          "units": 2,
+          "unitLabel": "2 rooms",
+          "summaryCount": "2",
+          "text": "Bright rooms framed by panoramic windows and garden greenery, opening onto a lawn with open Doon valley views. Available as individual rooms, or combined with Tara Villa as a 3 BHK villa.",
+          "features": [
+            "Valley views",
+            "Garden & lawn",
+            "Lounge seating",
+            "Available single or 3 BHK"
+          ],
+          "photos": [
+            {
+              "img": "valley-bedroom",
+              "alt": "Valley View bedroom with king bed and balcony view across the valley"
+            },
+            {
+              "img": "valley-sunset",
+              "alt": "Valley View suite lounge and balcony at sunset overlooking the Doon valley"
+            },
+            {
+              "img": "valley-lounge",
+              "alt": "Valley View suite living area with sofa and mountain view"
+            },
+            {
+              "img": "valley-room",
+              "alt": "Valley View room with red armchairs and floor-to-ceiling windows"
+            },
+            {
+              "img": "valley-lawn",
+              "alt": "Lawn dining table outside the Valley View rooms at sunset"
+            },
+            {
+              "img": "valley-outer",
+              "alt": "Courtyard outside the Valley View rooms with bougainvillea"
+            },
+            {
+              "img": "valley-garden",
+              "alt": "Garden outside the Valley View rooms at dusk with city lights below"
+            }
+          ]
+        },
+        {
+          "id": "three-bhk-villa",
+          "name": "3 BHK Villa (Tara & Valley View)",
+          "shortName": "3 BHK Combined Villa",
+          "units": 3,
+          "isCombination": true,
+          "unitLabel": "3 BHK villa · 3 bedrooms",
+          "summaryCount": "3 BHK",
+          "text": "Book the complete 3-bedroom villa — seamlessly combining 1 BHK Tara Villa and both Valley View rooms for families and groups. Includes 3 bedrooms, private kitchen, two living lounges, a valley-facing balcony and private garden lawn. (Also available to book individually as 1 BHK Tara Villa or single Valley View rooms).",
+          "features": [
+            "3 King bedrooms",
+            "Private kitchen",
+            "2 Living lounges",
+            "Valley-view balcony",
+            "Garden lawn",
+            "Sleeps up to 9-10"
+          ],
+          "photos": [
+            {
+              "img": "tara-bedroom",
+              "alt": "Master bedroom with king bed and valley-view bay window"
+            },
+            {
+              "img": "valley-sunset",
+              "alt": "Valley View lounge opening onto the Doon valley balcony at sunset"
+            },
+            {
+              "img": "valley-bedroom",
+              "alt": "Valley View second bedroom with king bed and mountain view"
+            },
+            {
+              "img": "tara-living",
+              "alt": "Tara Villa living area opening onto the sunset balcony"
+            },
+            {
+              "img": "tara-kitchen",
+              "alt": "Self-contained kitchen with hob, chimney, microwave and fridge"
+            },
+            {
+              "img": "valley-lounge",
+              "alt": "Spacious second lounge with sofa and panoramic valley windows"
+            },
+            {
+              "img": "tara-balcony",
+              "alt": "Private balcony seating overlooking the hills at sunset"
+            },
+            {
+              "img": "valley-lawn",
+              "alt": "Private lawn dining table outside with mountain backdrop"
+            },
+            {
+              "img": "tara-bath",
+              "alt": "Modern bathroom with blue tiles and vessel basin"
+            }
+          ]
+        },
+        {
+          "id": "private-pool-villa",
+          "name": "Private Pool Villa",
+          "shortName": "Private Pool Villa",
+          "units": 2,
+          "unitLabel": "2 rooms",
+          "summaryCount": "2",
+          "text": "Two bedrooms and a private living suite built around an exclusive indoor pool — slow afternoons in the water, with loungers, stone feature wall and no interruptions.",
+          "features": [
+            "Private indoor pool",
+            "2 Bedrooms",
+            "Suite lounge",
+            "Pool deck & loungers"
+          ],
+          "photos": [
+            {
+              "img": "pool-villa-pool",
+              "alt": "Private indoor pool with blue lighting and a stone feature wall"
+            },
+            {
+              "img": "pool-villa-suite",
+              "alt": "Pool Villa suite bedroom and lounge overlooking the indoor pool stone wall"
+            },
+            {
+              "img": "pool-villa-bedroom",
+              "alt": "Pool Villa bedroom with king bed and patterned teal feature wall"
+            },
+            {
+              "img": "pool-villa-lounge",
+              "alt": "Private Pool Villa suite lounge with sofa bed, lamp and study desk"
+            },
+            {
+              "img": "pool-villa-seating",
+              "alt": "Lounge seating area beside the private indoor pool glass wall"
+            },
+            {
+              "img": "pool-loungers",
+              "alt": "Indoor pool lined with palms and loungers",
+              "shared": true
+            },
+            {
+              "img": "indoor-pool",
+              "alt": "Private pool with wooden loungers",
+              "shared": true
+            }
+          ]
+        },
+        {
+          "id": "rustic-cottage",
+          "name": "Rustic Cottages",
+          "shortName": "Rustic Cottages",
+          "units": 2,
+          "unitLabel": "2 rooms",
+          "summaryCount": "2",
+          "text": "Timber A-frame cottages with vaulted wooden ceilings, cosy lounges and a porch terrace looking out to the hills.",
+          "features": [
+            "Timber A-frame",
+            "Vaulted ceilings",
+            "Porch terrace"
+          ],
+          "photos": [
+            {
+              "img": "rustic-bedroom",
+              "alt": "Rustic Cottage bedroom under a vaulted timber ceiling"
+            },
+            {
+              "img": "rustic-exterior",
+              "alt": "The twin timber A-frame Rustic Cottages at golden hour"
+            },
+            {
+              "img": "rustic-living",
+              "alt": "Rustic Cottage lounge with sofas and a hill-view window"
+            },
+            {
+              "img": "rustic-bedroom2",
+              "alt": "Rustic Cottage bedroom with patterned bench and wall sconces"
+            },
+            {
+              "img": "rustic-porch",
+              "alt": "Rustic Cottage porch terrace with wooden armchairs and valley views"
+            }
+          ]
+        }
+      ]
+    },
+    "reels": {
+      "eyebrow": "Reels",
+      "heading": "See the stay in motion",
+      "intro": "From winterline mornings to candlelit evenings, take a glimpse inside The Bougainvillea Retreat.",
+      "playAriaLabel": "Play reel: {title}. {caption}",
+      "scrollLeftAriaLabel": "Scroll reels left",
+      "scrollRightAriaLabel": "Scroll reels right",
+      "followLabel": "More on Instagram @bougainvillearetreat",
+      "items": [
+        {
+          "id": "winterline",
+          "title": "Winterline mornings",
+          "caption": "First light over the hills, chai in hand.",
+          "longCaption": "A winterline worth waking up for — first light over the hills, a warm cup of chai and nowhere to rush to.",
+          "duration": "PT17S",
+          "uploadDate": "2026-10-01",
+          "source": "https://www.instagram.com/reel/Dd9Hpgzp6yw/"
+        },
+        {
+          "id": "the-villa",
+          "title": "The villa",
+          "caption": "Timber gables, terraced gardens and valley views.",
+          "longCaption": "Timber gables, terraced gardens and wide valley views.",
+          "duration": "PT22S"
+        },
+        {
+          "id": "golden-sunset",
+          "title": "Sunset, the main event",
+          "caption": "Golden skies over the Doon valley.",
+          "longCaption": "Close the laptop and step outside — golden skies and valley views make sunset the main event.",
+          "duration": "PT18S",
+          "uploadDate": "2026-10-07",
+          "source": "https://www.instagram.com/reel/DeMf-98Jm1g/"
+        },
+        {
+          "id": "poolside",
+          "title": "Poolside moments",
+          "caption": "A private pool to call your own.",
+          "longCaption": "A private pool to call your own — slow afternoons, no sharing.",
+          "duration": "PT20S"
+        },
+        {
+          "id": "date-night-dinner",
+          "title": "A date like this",
+          "caption": "Candlelit dinner for two under timber beams.",
+          "longCaption": "Clubbing is overrated — a candlelit dinner for two under the timber beams.",
+          "duration": "PT30S",
+          "uploadDate": "2026-10-24",
+          "credit": "@harshita.acts",
+          "source": "https://www.instagram.com/reel/De4Xf_2JnPj/"
+        },
+        {
+          "id": "date-nights",
+          "title": "Date nights & celebrations",
+          "caption": "Candlelit dinners as the valley lights up.",
+          "longCaption": "Candlelit dinners on the Terrace of Doon as the valley lights up.",
+          "duration": "PT19S"
+        },
+        {
+          "id": "candlelit-terrace",
+          "title": "This side of Dehradun",
+          "caption": "Candlelit tables above the city lights.",
+          "longCaption": "Candlelit tables on the terrace, with the city lights of Dehradun spread out below.",
+          "duration": "PT10S",
+          "uploadDate": "2026-10-02",
+          "credit": "@thefeelingrapher",
+          "source": "https://www.instagram.com/reel/Dd_mKzGz204/"
+        },
+        {
+          "id": "dehradun-getaway",
+          "title": "Your next getaway",
+          "caption": "A-frame cottages, gardens and golden light.",
+          "longCaption": "Your next Dehradun getaway — A-frame cottages, terraced gardens and golden-hour light.",
+          "duration": "PT36S",
+          "uploadDate": "2026-11-01",
+          "credit": "@shweta22sharma",
+          "source": "https://www.instagram.com/reel/DfNB9EYIrPF/"
+        }
+      ]
+    },
+    "experiences": {
+      "eyebrow": "Experiences",
+      "heading": "Made for the way you travel.",
+      "items": [
+        {
+          "img": "night-terrace",
+          "title": "Couples",
+          "text": "Romantic stays with peaceful surroundings, cosy interiors and private candlelight dinners arranged for two.",
+          "alt": "Lantern-lit terrace seating at night above the city"
+        },
+        {
+          "img": "lawn",
+          "title": "Families & groups",
+          "text": "Spacious rooms, a 3 BHK villa, open lawns and a safe, relaxed setting for getaways with children and loved ones.",
+          "alt": "Wide green lawn beside the villa with hills behind"
+        },
+        {
+          "img": "swing-patio",
+          "title": "Celebrations",
+          "text": "Birthdays, anniversaries and proposals — with beautiful spaces that make every moment memorable.",
+          "alt": "Garden patio with a swing seat under flowering bougainvillea"
+        },
+        {
+          "img": "villa-hillside",
+          "title": "Pet-friendly",
+          "text": "Pets are welcome — your furry companions are part of the family, so relax together surrounded by nature.",
+          "alt": "The villa on a green hillside with bougainvillea in bloom"
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Gallery",
+      "heading": "Take a closer look.",
+      "filterAriaLabel": "Filter photos",
+      "openPhotoAriaLabel": "Open photo: {alt}",
+      "filters": [
+        {
+          "id": "all",
+          "label": "All"
+        },
+        {
+          "id": "villa",
+          "label": "Villa & gardens"
+        },
+        {
+          "id": "rooms",
+          "label": "Rooms"
+        },
+        {
+          "id": "pool",
+          "label": "Pool"
+        },
+        {
+          "id": "dining",
+          "label": "Dining & views"
+        }
+      ],
+      "items": [
+        {
+          "img": "villa-steps",
+          "category": "villa",
+          "size": "wide",
+          "alt": "Stone steps leading up to the A-frame villa at golden hour"
+        },
+        {
+          "img": "pool-loungers",
+          "category": "pool",
+          "alt": "Indoor pool lined with palms and loungers"
+        },
+        {
+          "img": "aframe-bedroom",
+          "category": "rooms",
+          "size": "tall",
+          "alt": "Rustic Cottage bedroom under a timber A-frame ceiling"
+        },
+        {
+          "img": "terrace-view",
+          "category": "dining",
+          "size": "wide",
+          "alt": "Open terrace with umbrella seating and a misty valley view"
+        },
+        {
+          "img": "living-room",
+          "category": "rooms",
+          "alt": "Living room with cushioned sofas and hill views"
+        },
+        {
+          "img": "city-lights",
+          "category": "dining",
+          "size": "wide",
+          "alt": "Dehradun city lights glittering across the valley at night"
+        },
+        {
+          "img": "swing-patio",
+          "category": "villa",
+          "alt": "Swing seat on a tiled patio beneath bougainvillea"
+        },
+        {
+          "img": "indoor-pool",
+          "category": "pool",
+          "size": "tall",
+          "alt": "Indoor pool with a stone feature wall"
+        },
+        {
+          "img": "suite",
+          "category": "rooms",
+          "alt": "Suite with pink curtains and a timber ceiling"
+        },
+        {
+          "img": "garden-bougainvillea",
+          "category": "villa",
+          "alt": "Garden lawn with flowering bougainvillea"
+        },
+        {
+          "img": "night-dining",
+          "category": "dining",
+          "size": "wide",
+          "alt": "Candlelit rooftop tables above the city at night"
+        },
+        {
+          "img": "terrace-dusk",
+          "category": "dining",
+          "size": "wide",
+          "alt": "Terrace with lantern-lit railings and seating at dusk, purple sky over the hills"
+        },
+        {
+          "img": "lounge",
+          "category": "rooms",
+          "size": "wide",
+          "alt": "Lounge with sectional sofa and valley view"
+        },
+        {
+          "img": "bathroom",
+          "category": "rooms",
+          "alt": "Modern bathroom with vessel basin and glass shower"
+        },
+        {
+          "img": "sunset-swing",
+          "category": "villa",
+          "size": "wide",
+          "alt": "Swing silhouetted at sunset over the hills"
+        }
+      ]
+    },
+    "instagram": {
+      "eyebrow": "On Instagram",
+      "heading": "Moments from the retreat.",
+      "followLabel": "Follow @bougainvillearetreat",
+      "openPhotoAriaLabel": "Open photo: {alt}",
+      "posts": [
+        {
+          "img": "dine-amidst-blooms",
+          "alt": "Dine amidst the blooms — garden lunch table beside a swing seat",
+          "href": "https://www.instagram.com/p/DfFbCsTSbhx/"
+        },
+        {
+          "img": "beside-the-peaks",
+          "alt": "Beside the peaks, under the sky — terrace dining tables against the hills"
+        },
+        {
+          "img": "blooming-vibes",
+          "alt": "Blooming vibes, breathtaking views — high tea on the garden terrace at sunset"
+        },
+        {
+          "img": "morning-views",
+          "alt": "Morning views with every bite — breakfast parathas and chai on the valley balcony"
+        },
+        {
+          "img": "hills-turn-golden",
+          "alt": "When the hills turn golden — sunset between cypress trees over the valley",
+          "href": "https://www.instagram.com/p/DeZZypnJJvD/"
+        }
+      ]
+    },
+    "reviews": {
+      "eyebrow": "Guest reviews",
+      "heading": "Loved by guests.",
+      "scoreAriaLabel": "Rated {value} out of 5 from {count} plus Google reviews — open on Google",
+      "scoreLabel": "{count}+ Google reviews",
+      "reviewSource": "· Google review, {date}",
+      "readAllLabel": "Read all reviews on Google",
+      "items": [
+        {
+          "quote": "Amazing place to visit. We experienced candle night dinner which was amazing, they have arranged it so nice which was looking too pretty as well. Must visit place.",
+          "by": "M. Aqil",
+          "date": "Sep 2026",
+          "feature": true
+        },
+        {
+          "quote": "Good accommodating service and tidy rooms. Sandeep Bhaiya is very polite and kind. Perfect person for hospitality. Would love to come back :)",
+          "by": "Mudita S.",
+          "date": "Sep 2026"
+        },
+        {
+          "quote": "Loved the experience. Came with my family on my father's birthday and it was a wholesome experience.",
+          "by": "Aman R.",
+          "date": "Sep 2026"
+        },
+        {
+          "quote": "Great experience… had arranged a custom candle night dinner. It was beautiful.",
+          "by": "Pallabi S.",
+          "date": "Oct 2026"
+        }
+      ]
+    },
+    "location": {
+      "eyebrow": "Location",
+      "heading": "Above the valley, close to the city.",
+      "intro": "A peaceful hillside setting in Bhagwant Pur, Dehradun (Uttarakhand) — away from the crowds, with the city lights of the Doon valley below.",
+      "directionsLabel": "Get directions",
+      "callLabel": "Call {phone}",
+      "mapTitle": "Map showing {name} in Bhagwant Pur, Dehradun",
+      "mapPlaceholderLabel": "View on Google Maps"
+    },
+    "finalCta": {
+      "backgroundImg": "city-lights",
+      "heading": "Planning a quiet escape?",
+      "text": "Book your Dehradun getaway directly for the best rate, or message our team on WhatsApp.",
+      "bookLabel": "Book your stay",
+      "whatsappLabel": "WhatsApp us",
+      "bookingComLabel": "Prefer Booking.com? View our listing ↗"
+    },
+    "footer": {
+      "tagline": "A luxury homestay and private pool villa in the Doon hills.",
+      "visitHeading": "Visit",
+      "contactHeading": "Contact",
+      "whatsappLabel": "WhatsApp",
+      "findUsHeading": "Find us on",
+      "findUsLinks": {
+        "bookingEngine": "Book direct (Best rate)",
+        "googleMaps": "Google Maps & reviews",
+        "booking": "Booking.com",
+        "instagram": "Instagram",
+        "businessSite": "Business profile site"
+      },
+      "navAriaLabel": "Footer",
+      "copyright": "© 2026 {name}, Dehradun",
+      "bestRateNote": "Best rates guaranteed on direct booking."
+    },
+    "floatingCta": {
+      "whatsappAriaLabel": "Enquire on WhatsApp",
+      "whatsappLabel": "WhatsApp",
+      "bookLabel": "Book now"
+    },
+    "enquiry": {
+      "closeAriaLabel": "Close enquiry form",
+      "eyebrow": "Enquire for availability",
+      "heading": "Plan your stay",
+      "intro": "Share your dates and our team will reply on WhatsApp with availability.",
+      "checkinLabel": "Check-in",
+      "checkoutLabel": "Check-out",
+      "stayLabel": "Stay",
+      "anyStayOption": "No preference",
+      "guestsLabel": "Guests",
+      "occasionLabel": "Occasion",
+      "occasions": [
+        "Getaway",
+        "Couple stay",
+        "Family trip",
+        "Celebration",
+        "Travelling with pets"
+      ],
+      "nameLabel": "Your name",
+      "phoneLabel": "Phone / WhatsApp",
+      "phonePlaceholder": "+91 98765 43210",
+      "noteLabel": "Anything else?",
+      "optionalLabel": "(optional)",
+      "notePlaceholder": "Candlelight dinner, early check-in…",
+      "submitLabel": "Send on WhatsApp",
+      "orLabel": "or",
+      "bookDirectLabel": "book directly on DigiBooking ↗",
+      "bookingComLabel": "view our Booking.com listing ↗",
+      "errors": {
+        "datesMissing": "Please choose your check-in and check-out dates.",
+        "checkoutBeforeCheckin": "Check-out needs to be after check-in.",
+        "phoneInvalid": "Please enter a phone or WhatsApp number we can reply on (at least 8 digits)."
+      },
+      "whatsappMessage": {
+        "greeting": "Hi! I'd like to check availability at The Bougainvillea Retreat.",
+        "dates": "Dates: {checkin} → {checkout}",
+        "stay": "Stay: {stay}",
+        "guests": "Guests: {guests}",
+        "occasion": "Occasion: {occasion}",
+        "name": "Name: {name}",
+        "phone": "Phone: {phone}",
+        "note": "Note: {note}"
+      }
+    },
+    "reelViewer": {
+      "unmuteAriaLabel": "Unmute",
+      "muteAriaLabel": "Mute",
+      "closeAriaLabel": "Close reel viewer",
+      "playAriaLabel": "Play",
+      "pauseAriaLabel": "Pause",
+      "videoCredit": "Video by {credit}",
+      "watchOnInstagramLabel": "Watch on Instagram",
+      "bookLabel": "Book now",
+      "previousAriaLabel": "Previous reel",
+      "nextAriaLabel": "Next reel",
+      "positionAnnouncement": "Reel {number} of {total}: {title}"
+    },
+    "lightbox": {
+      "ariaLabel": "Photo viewer",
+      "titledAriaLabel": "{title} photos",
+      "closeAriaLabel": "Close photo viewer",
+      "previousAriaLabel": "Previous photo",
+      "nextAriaLabel": "Next photo"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { ROOMS, TOTAL_ROOMS, roomPhotoPath, LINKS } from '../data/site.js';
+import { ROOMS, TOTAL_ROOMS, roomPhotoPath, LINKS, SECTIONS, fill } from '../data/site.js';
 import { img } from '../lib/asset.js';
 import { Eyebrow, BloomMark, Icon, Wave } from './Botanical.jsx';
 import Lightbox from './Lightbox.jsx';
@@ -7,6 +7,7 @@ import Lightbox from './Lightbox.jsx';
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const word = (n) => WORDS[n] || String(n);
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
+const T = SECTIONS.stays;
 
 function StayCard({ room, onPhotos }) {
   const [cover, ...rest] = room.photos;
@@ -16,7 +17,7 @@ function StayCard({ room, onPhotos }) {
   return (
     <article className="stay" id={`stay-${room.id}`} aria-labelledby={`stay-${room.id}-title`}>
       <div className="stay__media">
-        <button className="stay__cover" onClick={(e) => onPhotos(room, 0, e.currentTarget)} aria-label={`View ${room.name} photos`}>
+        <button className="stay__cover" onClick={(e) => onPhotos(room, 0, e.currentTarget)} aria-label={fill(T.viewPhotosAriaLabel, { name: room.name })}>
           <img
             src={img(roomPhotoPath(cover), true)}
             srcSet={`${img(roomPhotoPath(cover), true)} 800w, ${img(roomPhotoPath(cover))} 1600w`}
@@ -32,7 +33,7 @@ function StayCard({ room, onPhotos }) {
           <ul className="stay__thumbs">
             {thumbs.map((p, i) => (
               <li key={p.img}>
-                <button onClick={(e) => onPhotos(room, i + 1, e.currentTarget)} aria-label={`Open photo: ${p.alt}`}>
+                <button onClick={(e) => onPhotos(room, i + 1, e.currentTarget)} aria-label={fill(T.openPhotoAriaLabel, { alt: p.alt })}>
                   <img src={img(roomPhotoPath(p), true)} alt="" loading="lazy" width="800" height="533" />
                   {i === thumbs.length - 1 && more > 0 && <span className="stay__more" aria-hidden="true">+{more}</span>}
                 </button>
@@ -44,15 +45,15 @@ function StayCard({ room, onPhotos }) {
       <div className="stay__body">
         <h3 id={`stay-${room.id}-title`}>{room.name}</h3>
         <p>{room.text}</p>
-        <ul className="stay__features" aria-label={`${room.name} features`}>
+        <ul className="stay__features" aria-label={fill(T.featuresAriaLabel, { name: room.name })}>
           {room.features.map((f) => <li key={f}>{f}</li>)}
         </ul>
         <div className="stay__ctas">
           <a className="btn btn--primary btn--sm" href={LINKS.bookingEngine} target="_blank" rel="noopener">
-            Book this stay
+            {T.bookLabel}
           </a>
           <button className="stay__link" onClick={(e) => onPhotos(room, 0, e.currentTarget)}>
-            View {room.photos.length} photos <Icon name="right" />
+            {fill(T.viewPhotosLabel, { count: room.photos.length })} <Icon name="right" />
           </button>
         </div>
       </div>
@@ -75,19 +76,19 @@ export default function Stays() {
       <div className="wrap">
         <div className="section-head section-head--split">
           <div>
-            <Eyebrow>Stays</Eyebrow>
-            <h2 id="stays-title">{cap(word(TOTAL_ROOMS))} rooms, {word(ROOMS.length)} ways to stay in Dehradun.</h2>
+            <Eyebrow>{T.eyebrow}</Eyebrow>
+            <h2 id="stays-title">{cap(fill(T.heading, { totalRooms: word(TOTAL_ROOMS), stayTypes: word(ROOMS.length) }))}</h2>
           </div>
           <p className="section-head__aside section-head__aside--dark">
-            A 1 BHK villa, valley-view rooms, a 3 BHK villa for families and groups, a private pool villa and timber A-frame cottages — check live rates and book online.
+            {T.intro}
           </p>
         </div>
 
-        <ul className="stays__summary" aria-label="Room count by stay type">
+        <ul className="stays__summary" aria-label={T.summaryAriaLabel}>
           {ROOMS.map((r) => (
             <li key={r.id}><a href={`#stay-${r.id}`}><strong>{r.summaryCount || r.units}</strong> {r.shortName || r.name}</a></li>
           ))}
-          <li className="stays__total"><strong>{TOTAL_ROOMS}</strong> rooms in total</li>
+          <li className="stays__total"><strong>{TOTAL_ROOMS}</strong> {T.totalLabel}</li>
         </ul>
 
         <div className="stays__grid">

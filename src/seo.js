@@ -1,9 +1,11 @@
-import { PROPERTY, LINKS, REELS, GALLERY, INSTA_POSTS, ROOMS, TOTAL_ROOMS, roomPhotoPath, SITE_URL } from './data/site.js';
+import { PROPERTY, LINKS, REELS, GALLERY, INSTA_POSTS, ROOMS, TOTAL_ROOMS, roomPhotoPath, SITE_URL, SEO } from './data/site.js';
 
 const abs = (path) => `${SITE_URL}/${path.replace(/^\//, '')}`;
-const PUBLISHED = '2026-10-14';
-// Bump when page content changes; used as the sitemap <lastmod>.
-const LAST_UPDATED = '2026-11-03';
+const imgUrl = (name) => abs(`assets/img/${name}.jpg`);
+// Both dates live in content.json (seo.published / seo.lastUpdated).
+// Bump lastUpdated when page content changes; it is used as the sitemap <lastmod>.
+const PUBLISHED = SEO.published;
+const LAST_UPDATED = SEO.lastUpdated;
 
 export function buildJsonLd() {
   const id = `${SITE_URL}/#lodging`;
@@ -13,12 +15,12 @@ export function buildJsonLd() {
     '@type': ['LodgingBusiness', 'Resort'],
     '@id': id,
     name: PROPERTY.name,
-    alternateName: ['Bougainvillea Retreat Dehradun', 'The Bougainvillea Luxury Homestay'],
+    alternateName: SEO.alternateNames,
     slogan: PROPERTY.tagline,
     description: PROPERTY.description,
     url: `${SITE_URL}/`,
     telephone: PROPERTY.phone,
-    image: [abs('assets/img/hero-dusk.jpg'), abs('assets/img/villa-aframe.jpg'), abs('assets/img/indoor-pool.jpg')],
+    image: SEO.images.map(imgUrl),
     logo: abs('favicon.svg'),
     address: {
       '@type': 'PostalAddress',
@@ -32,9 +34,9 @@ export function buildJsonLd() {
     hasMap: LINKS.googleMaps,
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59'
+      dayOfWeek: SEO.openingHours.days,
+      opens: SEO.openingHours.opens,
+      closes: SEO.openingHours.closes
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -42,10 +44,8 @@ export function buildJsonLd() {
       reviewCount: PROPERTY.rating.count,
       bestRating: 5
     },
-    amenityFeature: ['Private pool', 'Mountain view', 'City view', 'Garden', 'Rooftop restaurant', 'Candlelight dinners'].map(
-      (name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })
-    ),
-    petsAllowed: true,
+    amenityFeature: SEO.amenities.map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })),
+    petsAllowed: SEO.petsAllowed,
     numberOfRooms: TOTAL_ROOMS,
     containsPlace: ROOMS.map((r) => ({
       '@type': r.id === 'tara-villa' || r.id === 'three-bhk-villa' ? 'Suite' : 'HotelRoom',
@@ -61,7 +61,7 @@ export function buildJsonLd() {
     potentialAction: {
       '@type': 'ReserveAction',
       target: LINKS.bookingEngine,
-      name: 'Book a room online'
+      name: SEO.bookOnlineActionName
     }
   };
 
@@ -70,7 +70,7 @@ export function buildJsonLd() {
     '@id': `${SITE_URL}/#website`,
     url: `${SITE_URL}/`,
     name: PROPERTY.name,
-    inLanguage: 'en-IN',
+    inLanguage: SEO.language,
     publisher: { '@id': id }
   };
 
@@ -78,12 +78,12 @@ export function buildJsonLd() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: `${SITE_URL}/`,
-    name: `${PROPERTY.name} | Luxury Homestay & Pool Villa, Dehradun`,
+    name: SEO.title,
     description: PROPERTY.description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': id },
-    primaryImageOfPage: abs('assets/img/hero-dusk.jpg'),
-    inLanguage: 'en-IN'
+    primaryImageOfPage: imgUrl(SEO.images[0]),
+    inLanguage: SEO.language
   };
 
   const videos = REELS.map((r) => ({
@@ -100,7 +100,7 @@ export function buildJsonLd() {
 }
 
 export function buildSitemap() {
-  const images = ['hero-dusk', ...new Set([...GALLERY.map((g) => g.img), ...ROOMS.flatMap((r) => r.photos.map(roomPhotoPath))])]
+  const images = [SEO.images[0], ...new Set([...GALLERY.map((g) => g.img), ...ROOMS.flatMap((r) => r.photos.map(roomPhotoPath))])]
     .concat(INSTA_POSTS.map((p) => `insta/${p.img}`))
     .map((n) => `    <image:image><image:loc>${abs(`assets/img/${n}.jpg`)}</image:loc></image:image>`)
     .join('\n');

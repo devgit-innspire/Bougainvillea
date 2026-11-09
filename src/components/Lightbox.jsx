@@ -1,6 +1,9 @@
 import { useRef } from 'react';
+import { SECTIONS, fill } from '../data/site.js';
 import { Icon } from './Botanical.jsx';
 import { useModal } from '../lib/ui.js';
+
+const T = SECTIONS.lightbox;
 
 /** Full-screen photo viewer. `items` are { src, alt }; `index` null means closed. */
 export default function Lightbox({ items, index, setIndex, returnFocus, title }) {
@@ -14,7 +17,7 @@ export default function Lightbox({ items, index, setIndex, returnFocus, title })
     <dialog
       ref={dialog}
       className="lightbox"
-      aria-label={title ? `${title} photos` : 'Photo viewer'}
+      aria-label={title ? fill(T.titledAriaLabel, { title }) : T.ariaLabel}
       onKeyDown={(e) => {
         if (e.key === 'ArrowRight') go(1);
         else if (e.key === 'ArrowLeft') go(-1);
@@ -32,15 +35,15 @@ export default function Lightbox({ items, index, setIndex, returnFocus, title })
           {item.alt} · {index + 1} / {items.length}
         </p>
       )}
-      <button className="icon-btn lightbox__close" aria-label="Close photo viewer" onClick={() => dialog.current.close()} autoFocus>
+      <button className="icon-btn lightbox__close" aria-label={T.closeAriaLabel} onClick={() => dialog.current.close()} autoFocus>
         <Icon name="close" className="" />
       </button>
       {items.length > 1 && (
         <>
-          <button className="icon-btn viewer__nav viewer__nav--prev" aria-label="Previous photo" onClick={() => go(-1)}>
+          <button className="icon-btn viewer__nav viewer__nav--prev" aria-label={T.previousAriaLabel} onClick={() => go(-1)}>
             <Icon name="left" className="" />
           </button>
-          <button className="icon-btn viewer__nav viewer__nav--next" aria-label="Next photo" onClick={() => go(1)}>
+          <button className="icon-btn viewer__nav viewer__nav--next" aria-label={T.nextAriaLabel} onClick={() => go(1)}>
             <Icon name="right" className="" />
           </button>
         </>

@@ -14,6 +14,7 @@ import Reviews from './components/Reviews.jsx';
 import Location from './components/Location.jsx';
 import { FinalCta, Footer, FloatingCta } from './components/Closing.jsx';
 import EnquiryModal from './components/EnquiryModal.jsx';
+import { SECTIONS } from './data/site.js';
 
 const REVEAL_SELECTOR =
   '.section-head, .reviews__head, .story__text, .story__media, .hl, .stay, .reel-card, .insta-post, .exp, .rev, .loc__text, .loc__map';
@@ -36,6 +37,13 @@ export default function App() {
     setReelIndex(i);
   }, []);
   const ui = useMemo(() => ({ openEnquiry, openReel }), [openEnquiry, openReel]);
+
+  // Admin popup bridge: the tracker dispatches `sa:open-enquiry` (detail.stay preselects a room).
+  useEffect(() => {
+    const onOpen = (e) => openEnquiry(null, { room: e.detail?.stay });
+    window.addEventListener('sa:open-enquiry', onOpen);
+    return () => window.removeEventListener('sa:open-enquiry', onOpen);
+  }, [openEnquiry]);
 
   // Sticky-nav shadow + floating CTA (hidden over the hero and the final CTA).
   useEffect(() => {
@@ -76,7 +84,7 @@ export default function App() {
   return (
     <UiContext.Provider value={ui}>
       <SvgDefs />
-      <a className="skip-link" href="#main">Skip to content</a>
+      <a className="skip-link" href="#main">{SECTIONS.header.skipLinkLabel}</a>
       <Header />
       <main id="main">
         <Hero />

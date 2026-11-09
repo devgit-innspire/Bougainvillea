@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { REELS, LINKS } from '../data/site.js';
+import { REELS, LINKS, SECTIONS, fill } from '../data/site.js';
 import { video, poster } from '../lib/asset.js';
 import { BloomMark, Icon } from './Botanical.jsx';
 import { useModal } from '../lib/ui.js';
 
 const pad = (n) => String(n).padStart(2, '0');
+const T = SECTIONS.reelViewer;
 
 export default function ReelViewer({ index, onIndex, onClose, returnFocus }) {
   const open = index !== null;
@@ -96,22 +97,22 @@ export default function ReelViewer({ index, onIndex, onClose, returnFocus }) {
         <div className="viewer__top">
           <span className="viewer__count">{open && `${pad(index + 1)} / ${pad(REELS.length)}`}</span>
           <div className="viewer__top-actions">
-            <button className="icon-btn" aria-pressed={!muted} aria-label={muted ? 'Unmute' : 'Mute'} onClick={() => setMuted((m) => !m)}>
+            <button className="icon-btn" aria-pressed={!muted} aria-label={muted ? T.unmuteAriaLabel : T.muteAriaLabel} onClick={() => setMuted((m) => !m)}>
               <Icon name={muted ? 'muted' : 'sound'} className="" />
             </button>
-            <button ref={closeBtn} className="icon-btn" aria-label="Close reel viewer" onClick={() => dialog.current.close()}>
+            <button ref={closeBtn} className="icon-btn" aria-label={T.closeAriaLabel} onClick={() => dialog.current.close()}>
               <Icon name="close" className="" />
             </button>
           </div>
         </div>
-        <button className={`viewer__tap${paused ? ' is-paused' : ''}`} aria-label={paused ? 'Play' : 'Pause'} onClick={toggle} />
+        <button className={`viewer__tap${paused ? ' is-paused' : ''}`} aria-label={paused ? T.playAriaLabel : T.pauseAriaLabel} onClick={toggle} />
         <div className="viewer__overlay">
           <p className="viewer__label"><BloomMark /> <span id="viewer-title">{reel?.title}</span></p>
           <p className="viewer__caption" id="viewer-caption">{reel?.longCaption}</p>
           {reel?.source && (
             <p className="viewer__credit">
               <a href={reel.source} target="_blank" rel="noopener">
-                {reel.credit ? `Video by ${reel.credit}` : 'Watch on Instagram'}
+                {reel.credit ? fill(T.videoCredit, { credit: reel.credit }) : T.watchOnInstagramLabel}
               </a>
             </p>
           )}
@@ -122,17 +123,17 @@ export default function ReelViewer({ index, onIndex, onClose, returnFocus }) {
             rel="noopener"
             onClick={() => dialog.current.close()}
           >
-            Book now
+            {T.bookLabel}
           </a>
         </div>
       </div>
-      <button className="viewer__nav viewer__nav--prev icon-btn" aria-label="Previous reel" onClick={() => go(-1)}>
+      <button className="viewer__nav viewer__nav--prev icon-btn" aria-label={T.previousAriaLabel} onClick={() => go(-1)}>
         <Icon name="left" className="" />
       </button>
-      <button className="viewer__nav viewer__nav--next icon-btn" aria-label="Next reel" onClick={() => go(1)}>
+      <button className="viewer__nav viewer__nav--next icon-btn" aria-label={T.nextAriaLabel} onClick={() => go(1)}>
         <Icon name="right" className="" />
       </button>
-      <p className="sr-only" aria-live="polite">{reel && `Reel ${index + 1} of ${REELS.length}: ${reel.title}`}</p>
+      <p className="sr-only" aria-live="polite">{reel && fill(T.positionAnnouncement, { number: index + 1, total: REELS.length, title: reel.title })}</p>
     </dialog>
   );
 }

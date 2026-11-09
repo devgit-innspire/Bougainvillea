@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { REELS, LINKS } from '../data/site.js';
+import { REELS, LINKS, SECTIONS, fill } from '../data/site.js';
 import { video, poster } from '../lib/asset.js';
 import { Eyebrow, BloomMark, Icon, PetalDrift, Wave } from './Botanical.jsx';
 import { useUi, prefersReducedMotion } from '../lib/ui.js';
+
+const T = SECTIONS.reels;
 
 function ReelCard({ reel, index }) {
   const { openReel } = useUi();
@@ -30,7 +32,7 @@ function ReelCard({ reel, index }) {
     <li className="reel-card">
       <button
         className={`reel-card__btn${previewing ? ' is-previewing' : ''}`}
-        aria-label={`Play reel: ${reel.title}. ${reel.caption}`}
+        aria-label={fill(T.playAriaLabel, { title: reel.title, caption: reel.caption })}
         onMouseEnter={startPreview}
         onMouseLeave={stopPreview}
         onClick={(e) => {
@@ -93,11 +95,11 @@ export default function Reels() {
       <div className="wrap">
         <div className="section-head section-head--split">
           <div>
-            <Eyebrow light>Reels</Eyebrow>
-            <h2 id="reels-title">See the stay in motion</h2>
+            <Eyebrow light>{T.eyebrow}</Eyebrow>
+            <h2 id="reels-title">{T.heading}</h2>
           </div>
           <p className="section-head__aside">
-            From winterline mornings to candlelit evenings, take a glimpse inside The Bougainvillea Retreat.
+            {T.intro}
           </p>
         </div>
 
@@ -106,18 +108,18 @@ export default function Reels() {
             {REELS.map((r, i) => <ReelCard key={r.id} reel={r} index={i} />)}
           </ul>
           <div className="reel-rail__controls">
-            <button className="icon-btn reel-rail__arrow" aria-label="Scroll reels left" disabled={edges.start} onClick={() => page(-1)}>
+            <button className="icon-btn reel-rail__arrow" aria-label={T.scrollLeftAriaLabel} disabled={edges.start} onClick={() => page(-1)}>
               <Icon name="left" className="" />
             </button>
             <span className="reel-dots" aria-hidden="true">
               {REELS.map((r, i) => <i key={r.id} className={i === active ? 'is-active' : ''} />)}
             </span>
-            <button className="icon-btn reel-rail__arrow" aria-label="Scroll reels right" disabled={edges.end} onClick={() => page(1)}>
+            <button className="icon-btn reel-rail__arrow" aria-label={T.scrollRightAriaLabel} disabled={edges.end} onClick={() => page(1)}>
               <Icon name="right" className="" />
             </button>
           </div>
           <p className="reel-rail__follow">
-            <a href={LINKS.instagram} target="_blank" rel="noopener">More on Instagram @bougainvillearetreat <Icon name="right" /></a>
+            <a href={LINKS.instagram} target="_blank" rel="noopener">{T.followLabel} <Icon name="right" /></a>
           </p>
         </div>
       </div>

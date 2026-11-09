@@ -20,11 +20,16 @@ npm run preview   # serve dist/ at the production base path
 
 | Path | Purpose |
 | --- | --- |
-| `src/data/site.js` | Single source of truth for property facts, reels, gallery, reviews and outbound links |
+| `src/data/content.json` | **All editable content** (the file the admin panel edits): SEO/head meta, property facts, links, nav, and every section's copy, rooms, reels, gallery, reviews and form text, in page order. `{name}`-style tokens are filled in by code |
+| `src/data/site.js` | Thin layer that re-exports content.json under the names components use (`PROPERTY`, `ROOMS`, …) plus helpers (`SITE_URL`, `waLink`, `TOTAL_ROOMS`, `fill`) |
 | `src/seo.js` | JSON-LD (`LodgingBusiness`, `WebSite`, `WebPage`, `VideoObject`), sitemap and robots |
 | `src/components/Botanical.jsx` | Bougainvillea motif: SVG sprite, bloom mark, flowering spray, falling bracts, wave edges |
 | `scripts/prerender.mjs` | Injects server-rendered markup + JSON-LD into `dist/index.html`, writes `sitemap.xml`, `robots.txt` |
 | `public/assets/` | Optimised photos (`*-sm.jpg` = 800w, others 1600w+) and 720×1280 H.264 reels |
+
+### Admin panel (`VITE_ADMIN_URL`)
+
+Set `VITE_ADMIN_URL` in `.env.production` to the admin panel's base URL to load its tracker (`<VITE_ADMIN_URL>/t.js`) and send enquiry-form leads to it (`window.sa('lead', …)`); leave it empty to disable both. The panel can also open the enquiry form by dispatching a `sa:open-enquiry` window event (`detail.stay` preselects a room). `index.html` meta tags are filled from `seo` in `content.json` by a small plugin in `vite.config.js`.
 
 ### Canonical URL
 
@@ -53,7 +58,7 @@ One page, so each search intent is owned by one section: its heading, opening co
 | Dining | rooftop dining, Terrace of Doon | Highlights "Terrace of Doon", gallery alt text |
 | Local | Bhagwant Pur, Dehradun, Uttarakhand, Doon valley | Story, Location H2 + copy, address, geo meta, JSON-LD `address` / `geo` |
 
-When copy changes, keep the term in the heading or first sentence of its section, once, written as a guest would read it. Bump `LAST_UPDATED` in `src/seo.js` so the sitemap `<lastmod>` stays honest.
+When copy changes, keep the term in the heading or first sentence of its section, once, written as a guest would read it. Bump `seo.lastUpdated` in `src/data/content.json` so the sitemap `<lastmod>` stays honest.
 
 ### SEO checklist after go-live
 
@@ -72,4 +77,4 @@ Direct booking CTAs ("Book now", "Book this stay") link directly to the official
 
 ## Rooms & Stays
 
-7 physical rooms across 5 stay types, defined in `ROOMS` in `src/data/site.js`: Tara Villa (1 BHK), Valley View Rooms (2 rooms), 3 BHK Villa (combining 1 BHK Tara Villa and both Valley View rooms for groups/families), Private Pool Villa (2 rooms around a private indoor pool), and Rustic Cottages (2 timber A-frame cottages). The Stays section, the enquiry form's *Stay* menu, JSON-LD `numberOfRooms`/`containsPlace` and the sitemap's image entries all read from it.
+7 physical rooms across 5 stay types, defined in `sections.stays.rooms` in `src/data/content.json` (exported as `ROOMS`): Tara Villa (1 BHK), Valley View Rooms (2 rooms), 3 BHK Villa (combining 1 BHK Tara Villa and both Valley View rooms for groups/families), Private Pool Villa (2 rooms around a private indoor pool), and Rustic Cottages (2 timber A-frame cottages). The Stays section, the enquiry form's *Stay* menu, JSON-LD `numberOfRooms`/`containsPlace` and the sitemap's image entries all read from it.
